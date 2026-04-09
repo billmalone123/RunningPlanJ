@@ -4,84 +4,111 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Julienne — 8-Week Half Marathon Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root {
-  --bg: #070d1a;
-  --surface: #0e1828;
-  --card: #152032;
-  --card-hover: #1c2a42;
-  --border: #1e3054;
-  --border-light: #2d4070;
-  --text: #dde4f0;
-  --text-muted: #7890b2;
-  --text-dim: #3d5070;
-  --blue: #4b8cf8;
-  --blue-bg: #0c1f3f;
-  --green: #34d399;
-  --green-bg: #063322;
-  --yellow: #fbbf24;
-  --yellow-bg: #3a2404;
-  --red: #f87171;
-  --red-bg: #3d0f0f;
-  --purple: #a78bfa;
-  --purple-bg: #1e1040;
-  --teal: #2dd4bf;
-  --teal-bg: #042e2b;
-  --gold: #fcd34d;
-  --gold-bg: #3d2800;
-  --radius: 14px;
-  --radius-sm: 9px;
-  --radius-xs: 5px;
-  --shadow: 0 8px 32px rgba(0,0,0,.5);
-  --shadow-sm: 0 2px 12px rgba(0,0,0,.35);
-  --font: 'Inter', -apple-system, system-ui, sans-serif;
+  --bg: #eef5ff;
+  --surface: #f7faff;
+  --card: #ffffff;
+  --card-hover: #f0f6ff;
+  --border: #cfe0f7;
+  --border-light: #aac9f0;
+  --text: #1a3050;
+  --text-muted: #5a7a9c;
+  --text-dim: #a0bcda;
+  --blue: #2563eb;
+  --blue-mid: #3b82f6;
+  --blue-light: #dbeafe;
+  --blue-pale: #eff6ff;
+  --green: #059669;
+  --green-bg: #d1fae5;
+  --green-text: #065f46;
+  --yellow: #d97706;
+  --yellow-bg: #fef3c7;
+  --yellow-text: #92400e;
+  --red: #dc2626;
+  --red-bg: #fee2e2;
+  --red-text: #991b1b;
+  --purple: #7c3aed;
+  --purple-bg: #ede9fe;
+  --purple-text: #4c1d95;
+  --teal: #0d9488;
+  --teal-bg: #ccfbf1;
+  --teal-text: #134e4a;
+  --gold: #b45309;
+  --gold-bg: #fef3c7;
+  --gold-text: #78350f;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+  --shadow: 0 4px 24px rgba(37,99,235,.1);
+  --shadow-sm: 0 2px 10px rgba(37,99,235,.07);
+  --shadow-card: 0 2px 16px rgba(37,99,235,.09);
+  --font: 'Nunito', -apple-system, system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
 }
 
 html { font-size: 15px; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.6; }
+body {
+  font-family: var(--font);
+  background: linear-gradient(160deg, #ddeeff 0%, #eef5ff 40%, #f5f0ff 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
 
 /* ──── HEADER ──── */
 header {
-  background: linear-gradient(135deg, #0a1525 0%, #102240 50%, #0a1a35 100%);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 55%, #7c3aed 100%);
   padding: 1.25rem 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(37,99,235,.3);
 }
 .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .header-left { display: flex; align-items: center; gap: 1rem; }
 .header-icon { font-size: 2rem; line-height: 1; }
-.header-title { font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
-.header-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
-.header-sub span { color: var(--gold); font-weight: 600; }
+.header-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+.header-sub { font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-top: 0.1rem; font-weight: 500; }
+.header-sub span { color: #fde68a; font-weight: 700; }
 .header-stats { display: flex; gap: 1.5rem; }
 .h-stat { text-align: center; }
-.h-stat-val { display: block; font-size: 1.4rem; font-weight: 800; color: var(--blue); font-variant-numeric: tabular-nums; }
-.h-stat-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.h-stat-val { display: block; font-size: 1.4rem; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; }
+.h-stat-label { font-size: 0.67rem; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; }
 
 /* ──── TABS ──── */
-.tab-nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 80px; z-index: 99; }
-.tab-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; padding: 0 2rem; gap: 0; }
+.tab-nav {
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 76px;
+  z-index: 99;
+  box-shadow: 0 2px 12px rgba(37,99,235,.06);
+}
+.tab-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; padding: 0 2rem; }
 .tab-btn {
   padding: 0.9rem 1.5rem;
   background: none;
   border: none;
   border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
   color: var(--text-muted);
-  font-size: 0.88rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all .2s;
   white-space: nowrap;
   font-family: var(--font);
   letter-spacing: 0.01em;
 }
-.tab-btn:hover { color: var(--text); }
+.tab-btn:hover { color: var(--blue); }
 .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
 
 /* ──── MAIN LAYOUT ──── */
@@ -90,243 +117,294 @@ header {
 
 /* ──── OVERVIEW TAB ──── */
 .profile-card {
-  background: linear-gradient(135deg, var(--card) 0%, #0d2040 100%);
-  border: 1px solid var(--border-light);
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 60%, #7c3aed 100%);
   border-radius: var(--radius);
-  padding: 1.75rem 2rem;
+  padding: 2rem;
   margin-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
+  box-shadow: 0 8px 32px rgba(37,99,235,.25);
 }
-.profile-section h4 { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
-.profile-stat { font-size: 1.05rem; font-weight: 600; color: var(--text); }
-.profile-stat span { color: var(--blue); }
-.profile-note { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem; }
+.profile-section h4 { font-size: 0.7rem; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 700; }
+.profile-stat { font-size: 1.05rem; font-weight: 800; color: #fff; }
+.profile-stat span { color: #fde68a; }
+.profile-note { font-size: 0.8rem; color: rgba(255,255,255,.7); margin-top: 0.25rem; font-weight: 500; }
 
-.section-title { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem; }
-.section-title::before { content: ''; display: block; width: 3px; height: 1.15rem; background: var(--blue); border-radius: 2px; }
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.section-title::before { content: ''; display: block; width: 4px; height: 1.2rem; background: linear-gradient(180deg, #3b82f6, #7c3aed); border-radius: 2px; }
 
 .principles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
 .principle-card {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.4rem 1.5rem;
-  transition: border-color .2s, transform .2s;
+  padding: 1.5rem;
+  transition: all .2s;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 .principle-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--accent, var(--blue));
+  height: 4px;
+  background: var(--accent, var(--blue-mid));
+  border-radius: 2px 2px 0 0;
 }
-.principle-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
-.principle-icon { font-size: 1.6rem; margin-bottom: 0.7rem; }
-.principle-title { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
-.principle-body { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; }
-.principle-highlight { color: var(--text); font-weight: 600; }
+.principle-card:hover { border-color: var(--border-light); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,99,235,.14); }
+.principle-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+.principle-title { font-size: 0.97rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; }
+.principle-body { font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; }
+.principle-highlight { color: var(--blue); font-weight: 700; }
 
 .run-type-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; margin-bottom: 2rem; }
-.legend-item { display: flex; align-items: flex-start; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.9rem 1rem; }
-.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 0.3rem; }
-.legend-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.legend-item { display: flex; align-items: flex-start; gap: 0.75rem; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 0.9rem 1rem; box-shadow: var(--shadow-sm); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 0.35rem; }
+.legend-name { font-size: 0.85rem; font-weight: 800; color: var(--text); }
 .legend-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
 
 .swimmer-callout {
-  background: linear-gradient(135deg, #0a1a35, #101d40);
-  border: 1px solid #2d4a80;
+  background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+  border: 1.5px solid #93c5fd;
   border-radius: var(--radius);
   padding: 1.5rem 1.75rem;
   margin-bottom: 2rem;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  box-shadow: var(--shadow-sm);
 }
-.callout-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
-.callout-title { font-size: 0.95rem; font-weight: 700; color: var(--blue); margin-bottom: 0.4rem; }
-.callout-body { font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; }
-.callout-body strong { color: var(--text); }
+.callout-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 0.1rem; }
+.callout-title { font-size: 0.97rem; font-weight: 800; color: var(--blue); margin-bottom: 0.4rem; }
+.callout-body { font-size: 0.83rem; color: var(--text-muted); line-height: 1.75; }
+.callout-body strong { color: var(--text); font-weight: 700; }
 
 /* ──── PLAN TAB ──── */
-.week-accordion { display: flex; flex-direction: column; gap: 0.75rem; }
+.week-accordion { display: flex; flex-direction: column; gap: 0.85rem; }
 
-.week-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color .2s; }
-.week-item.open { border-color: var(--border-light); }
-.week-item.current-week { border-color: var(--blue-bg); }
-.week-item.race-week { border-color: var(--gold-bg); }
+.week-item {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: var(--shadow-sm);
+}
+.week-item.open { border-color: #93c5fd; box-shadow: 0 4px 20px rgba(37,99,235,.12); }
+.week-item.current-week { border-color: #60a5fa; }
+.week-item.race-week { border-color: #fcd34d; }
 
 .week-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.1rem 1.5rem;
+  padding: 1.15rem 1.5rem;
   cursor: pointer;
   user-select: none;
   transition: background .15s;
   flex-wrap: wrap;
 }
-.week-header:hover { background: var(--card-hover); }
+.week-header:hover { background: var(--blue-pale); }
 
-.week-num { font-size: 0.7rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; min-width: 3.5rem; }
+.week-num { font-size: 0.68rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; min-width: 3.5rem; }
 .week-phase-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 .week-title-block { flex: 1; min-width: 160px; }
-.week-title { font-size: 0.95rem; font-weight: 700; color: var(--text); }
-.week-dates { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.1rem; }
+.week-title { font-size: 0.97rem; font-weight: 800; color: var(--text); }
+.week-dates { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.1rem; font-weight: 500; }
 .week-race-badge {
-  font-size: 0.68rem; font-weight: 700; background: var(--gold-bg);
-  color: var(--gold); padding: 2px 8px; border-radius: 20px;
-  text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid #7a5900;
+  font-size: 0.67rem; font-weight: 800;
+  background: var(--gold-bg); color: var(--gold-text);
+  padding: 3px 9px; border-radius: 20px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  border: 1.5px solid #fde68a;
 }
 .week-current-badge {
-  font-size: 0.68rem; font-weight: 700; background: var(--blue-bg);
-  color: var(--blue); padding: 2px 8px; border-radius: 20px;
-  text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid #1a3a6a;
+  font-size: 0.67rem; font-weight: 800;
+  background: var(--blue-light); color: var(--blue);
+  padding: 3px 9px; border-radius: 20px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  border: 1.5px solid #93c5fd;
 }
 .week-mileage-block { text-align: right; min-width: 120px; }
-.week-planned { font-size: 1rem; font-weight: 700; color: var(--text); }
-.week-logged { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
-.week-logged-val { font-weight: 600; }
-.week-progress-bar { height: 3px; background: var(--border); border-radius: 2px; width: 80px; margin-left: auto; margin-top: 0.35rem; overflow: hidden; }
-.week-progress-fill { height: 100%; background: var(--green); border-radius: 2px; transition: width .4s ease; }
-.week-chevron { color: var(--text-dim); font-size: 0.9rem; transition: transform .3s; flex-shrink: 0; }
+.week-planned { font-size: 1rem; font-weight: 800; color: var(--text); }
+.week-logged { font-size: 0.77rem; color: var(--text-muted); margin-top: 0.1rem; font-weight: 600; }
+.week-progress-bar { height: 4px; background: var(--border); border-radius: 2px; width: 80px; margin-left: auto; margin-top: 0.35rem; overflow: hidden; }
+.week-progress-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #7c3aed); border-radius: 2px; transition: width .4s ease; }
+.week-chevron { color: var(--text-dim); font-size: 0.85rem; transition: transform .3s; flex-shrink: 0; }
 .week-item.open .week-chevron { transform: rotate(180deg); }
 
 .week-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0,1,.5,1); }
 .week-item.open .week-body { max-height: 4000px; }
 .week-body-inner { padding: 0 1.5rem 1.5rem; }
 
-.runs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.9rem; margin-bottom: 1.25rem; }
+.runs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
 
 .run-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 1.1rem 1.2rem;
-  transition: border-color .2s;
+  padding: 1.15rem 1.25rem;
+  transition: border-color .2s, box-shadow .2s;
   position: relative;
 }
-.run-card.is-done { opacity: 0.75; }
+.run-card.is-done { opacity: 0.8; }
 .run-card.is-done::after {
   content: '✓ Logged';
   position: absolute;
-  top: 0.7rem; right: 0.9rem;
-  font-size: 0.68rem; font-weight: 700; color: var(--green);
+  top: 0.75rem; right: 0.9rem;
+  font-size: 0.67rem; font-weight: 800; color: var(--green-text);
   background: var(--green-bg);
-  padding: 2px 7px; border-radius: 20px;
-  border: 1px solid #0a4a2a;
+  padding: 3px 8px; border-radius: 20px;
+  border: 1.5px solid #6ee7b7;
 }
-.run-card:hover { border-color: var(--border-light); }
+.run-card:hover { border-color: #93c5fd; box-shadow: 0 4px 16px rgba(37,99,235,.1); }
 
-.run-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.6rem; gap: 0.5rem; }
+.run-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.65rem; gap: 0.5rem; }
 .run-type-badge {
   display: inline-flex; align-items: center;
-  font-size: 0.65rem; font-weight: 700;
+  font-size: 0.65rem; font-weight: 800;
   text-transform: uppercase; letter-spacing: 0.07em;
-  padding: 3px 9px; border-radius: 20px;
+  padding: 4px 10px; border-radius: 20px;
   flex-shrink: 0;
 }
-.run-day { font-size: 0.72rem; color: var(--text-muted); text-align: right; flex-shrink: 0; }
+.run-day { font-size: 0.72rem; color: var(--text-muted); text-align: right; flex-shrink: 0; font-weight: 600; }
 
-.run-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.9rem; }
+.run-desc { font-size: 0.81rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 0.95rem; }
 
 .run-stats { display: flex; gap: 1.25rem; margin-bottom: 1rem; }
-.run-stat-item label { display: block; font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
-.run-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
-.run-stat-val.pace-val { color: var(--text-muted); }
+.run-stat-item label { display: block; font-size: 0.64rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; font-weight: 700; }
+.run-stat-val { font-size: 0.9rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.run-stat-val.pace-val { color: var(--text-muted); font-size: 0.76rem; }
 
 .run-log-divider { height: 1px; background: var(--border); margin-bottom: 0.9rem; }
-.log-label { font-size: 0.68rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.65rem; }
-.log-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.log-label { font-size: 0.67rem; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.65rem; }
+.log-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
 .log-field { display: flex; flex-direction: column; gap: 0.25rem; }
-.log-field label { font-size: 0.68rem; color: var(--text-muted); }
+.log-field label { font-size: 0.68rem; color: var(--text-muted); font-weight: 600; }
 .log-field input[type="text"],
 .log-field input[type="number"] {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: #fff;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-xs);
   color: var(--text);
-  font-size: 0.85rem;
-  padding: 0.45rem 0.6rem;
+  font-size: 0.88rem;
+  padding: 0.48rem 0.65rem;
   font-family: var(--font);
   width: 100%;
-  transition: border-color .15s;
+  transition: border-color .15s, box-shadow .15s;
   font-variant-numeric: tabular-nums;
+  font-weight: 600;
 }
-.log-field input:focus { outline: none; border-color: var(--blue); }
+.log-field input:focus { outline: none; border-color: var(--blue-mid); box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
 .log-field input.invalid { border-color: var(--red); }
 .log-field input.valid { border-color: var(--green); }
-.log-notes { margin-top: 0.6rem; }
-.log-notes input { width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-xs); color: var(--text); font-size: 0.8rem; padding: 0.4rem 0.6rem; font-family: var(--font); transition: border-color .15s; }
-.log-notes input:focus { outline: none; border-color: var(--blue); }
+.log-notes { margin-top: 0.65rem; }
+.log-notes input {
+  width: 100%; background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius-xs); color: var(--text); font-size: 0.8rem;
+  padding: 0.42rem 0.65rem; font-family: var(--font);
+  transition: border-color .15s, box-shadow .15s; font-weight: 500;
+}
+.log-notes input:focus { outline: none; border-color: var(--blue-mid); box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
 
-.done-row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; }
+.done-row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.8rem; }
 .done-toggle {
-  appearance: none; width: 36px; height: 20px; border-radius: 10px;
+  appearance: none; width: 38px; height: 21px; border-radius: 11px;
   background: var(--border); cursor: pointer; transition: background .2s;
-  position: relative; flex-shrink: 0;
+  position: relative; flex-shrink: 0; border: 1.5px solid var(--border-light);
 }
 .done-toggle::after {
   content: ''; position: absolute; top: 2px; left: 2px;
-  width: 16px; height: 16px; border-radius: 50%; background: var(--text-muted);
-  transition: transform .2s, background .2s;
+  width: 15px; height: 15px; border-radius: 50%; background: #fff;
+  transition: transform .2s; box-shadow: 0 1px 4px rgba(0,0,0,.15);
 }
-.done-toggle:checked { background: var(--green-bg); }
-.done-toggle:checked::after { transform: translateX(16px); background: var(--green); }
-.done-toggle-label { font-size: 0.78rem; color: var(--text-muted); cursor: pointer; }
+.done-toggle:checked { background: linear-gradient(135deg, #3b82f6, #7c3aed); border-color: #7c3aed; }
+.done-toggle:checked::after { transform: translateX(17px); }
+.done-toggle-label { font-size: 0.78rem; color: var(--text-muted); cursor: pointer; font-weight: 600; }
 
 .science-box {
-  background: linear-gradient(135deg, #0a1525 0%, #0d1e38 100%);
-  border: 1px solid #1a3560;
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+  border: 1.5px solid #93c5fd;
   border-radius: var(--radius-sm);
-  padding: 1.2rem 1.4rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   gap: 0.9rem;
   align-items: flex-start;
 }
 .science-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
-.science-content {}
-.science-title { font-size: 0.78rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
-.science-text { font-size: 0.81rem; color: var(--text-muted); line-height: 1.7; }
-.science-text strong { color: var(--text); }
+.science-title { font-size: 0.75rem; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 0.4rem; }
+.science-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; }
+.science-text strong { color: var(--text); font-weight: 700; }
 
 /* ──── TRACKER TAB ──── */
-.tracker-stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.9rem; margin-bottom: 2rem; }
+.tracker-stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
 .tracker-stat-card {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 1.1rem 1.3rem;
+  padding: 1.25rem 1.3rem;
   text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform .2s;
 }
-.tracker-stat-val { font-size: 1.75rem; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
-.tracker-stat-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 0.25rem; }
-.tracker-stat-sub { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.15rem; }
+.tracker-stat-card:hover { transform: translateY(-2px); }
+.tracker-stat-val { font-size: 1.9rem; font-weight: 900; color: var(--text); font-variant-numeric: tabular-nums; }
+.tracker-stat-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; font-weight: 700; }
+.tracker-stat-sub { font-size: 0.74rem; color: var(--text-dim); margin-top: 0.2rem; font-weight: 500; }
 
-.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
-.chart-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
-.chart-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
-.chart-sub { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+.chart-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+.chart-title { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 0.25rem; }
+.chart-sub { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.25rem; font-weight: 500; }
 .chart-container { position: relative; height: 240px; }
 
-.tracker-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
-.tracker-table th { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
-.tracker-table td { font-size: 0.82rem; color: var(--text); padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+.tracker-table { width: 100%; border-collapse: collapse; }
+.tracker-table th {
+  font-size: 0.68rem; font-weight: 800; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 0.55rem 0.75rem; text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+.tracker-table td {
+  font-size: 0.83rem; color: var(--text);
+  padding: 0.7rem 0.75rem; border-bottom: 1px solid var(--border);
+  font-variant-numeric: tabular-nums; font-weight: 500;
+}
 .tracker-table tr:last-child td { border-bottom: none; }
-.tracker-table tr:hover td { background: var(--card-hover); }
+.tracker-table tr:hover td { background: var(--blue-pale); }
 .tracker-table .phase-pill {
-  display: inline-block; font-size: 0.63rem; font-weight: 700;
-  padding: 2px 7px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;
+  display: inline-block; font-size: 0.63rem; font-weight: 800;
+  padding: 3px 8px; border-radius: 20px;
+  text-transform: uppercase; letter-spacing: 0.05em;
 }
 .tbl-bar-wrap { width: 80px; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; display: inline-block; vertical-align: middle; margin-left: 6px; }
-.tbl-bar-fill { height: 100%; background: var(--green); border-radius: 3px; transition: width .4s; }
-.tbl-pct { font-size: 0.72rem; color: var(--text-muted); margin-left: 4px; vertical-align: middle; }
+.tbl-bar-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #7c3aed); border-radius: 3px; transition: width .4s; }
+.tbl-pct { font-size: 0.72rem; color: var(--text-muted); margin-left: 4px; vertical-align: middle; font-weight: 600; }
 
-.clear-btn { background: var(--red-bg); border: 1px solid var(--red); color: var(--red); padding: 0.4rem 1rem; border-radius: var(--radius-xs); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all .2s; font-family: var(--font); }
-.clear-btn:hover { background: var(--red); color: #fff; }
+.clear-btn {
+  background: var(--red-bg); border: 1.5px solid #fca5a5; color: var(--red-text);
+  padding: 0.45rem 1rem; border-radius: var(--radius-xs);
+  font-size: 0.78rem; font-weight: 700; cursor: pointer;
+  transition: all .2s; font-family: var(--font);
+}
+.clear-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
 .tracker-actions { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
 
 /* ──── RESPONSIVE ──── */
@@ -340,7 +418,7 @@ header {
   .charts-grid { grid-template-columns: 1fr; }
   .week-header { padding: 0.9rem 1rem; }
   .week-body-inner { padding: 0 1rem 1rem; }
-  .tab-btn { padding: 0.75rem 0.9rem; font-size: 0.8rem; }
+  .tab-btn { padding: 0.75rem 0.9rem; font-size: 0.82rem; }
 }
 
 @media (max-width: 480px) {
@@ -348,12 +426,6 @@ header {
   .header-stats { width: 100%; justify-content: space-around; }
   .principles-grid { grid-template-columns: 1fr; }
 }
-
-/* ──── UTILITIES ──── */
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.flex-between { display: flex; align-items: center; justify-content: space-between; }
 </style>
 </head>
 <body>
@@ -361,9 +433,8 @@ header {
 <header>
   <div class="header-inner">
     <div class="header-left">
-      <div class="header-icon">🏃‍♀️</div>
       <div>
-        <div class="header-title">Julienne's Half Marathon Training Plan</div>
+        <div class="header-title">Julienne's Half Marathon Plan</div>
         <div class="header-sub">8 Weeks · Goal: <span>1:45 (8:00/mi)</span> · Race: <span>April 26, 2026</span></div>
       </div>
     </div>
@@ -414,7 +485,6 @@ header {
   </div>
 
   <div class="swimmer-callout">
-    <div class="callout-icon">🏊‍♀️</div>
     <div>
       <div class="callout-title">The Swimmer's Paradox — Why Easy Must Be Genuinely Easy</div>
       <div class="callout-body">
@@ -425,112 +495,73 @@ header {
 
   <div class="section-title">Coaching Principles</div>
   <div class="principles-grid">
-    <div class="principle-card" style="--accent: #4b8cf8">
-      <div class="principle-icon">80/20</div>
+    <div class="principle-card" style="--accent: #3b82f6">
       <div class="principle-title">The 80/20 Rule</div>
-      <div class="principle-body">
-        <span class="principle-highlight">80% of miles are run at easy, aerobic effort. 20% are hard.</span> This ratio is backed by decades of research on elite endurance athletes. Running too much at moderate intensity — the "gray zone" — accumulates fatigue without maximizing either aerobic development or speed adaptation. Hard days are hard, easy days are truly easy.
-      </div>
+      <div class="principle-body"><span class="principle-highlight">80% of miles are run at easy, aerobic effort. 20% are hard.</span> This ratio is backed by decades of research on elite endurance athletes. Running too much at moderate intensity — the "gray zone" — accumulates fatigue without maximizing either aerobic development or speed adaptation. Hard days are hard, easy days are truly easy.</div>
     </div>
     <div class="principle-card" style="--accent: #f59e0b">
-      <div class="principle-icon">📈</div>
       <div class="principle-title">The 10% Mileage Rule</div>
-      <div class="principle-body">
-        Weekly mileage never increases more than <span class="principle-highlight">10% from the previous week</span> (excluding recovery weeks). This pacing limits the rate of connective tissue stress. Your aerobic system could handle 50 miles/week today — your tendons cannot. The plan starts at 22 miles and peaks at 28, a 40% increase managed over 6 weeks with built-in recovery.
-      </div>
+      <div class="principle-body">Weekly mileage never increases more than <span class="principle-highlight">10% from the previous week</span> (excluding recovery weeks). Your aerobic system could handle 50 miles/week today — your tendons cannot. The plan starts at 22 miles and peaks at 28, a 40% increase managed over 6 weeks with built-in recovery.</div>
     </div>
     <div class="principle-card" style="--accent: #ef4444">
-      <div class="principle-icon">🔥</div>
       <div class="principle-title">Tempo Runs & Lactate Threshold</div>
-      <div class="principle-body">
-        Your <span class="principle-highlight">lactate threshold pace is the single strongest predictor of half marathon performance.</span> Tempo runs at 8:10–8:30/mi push your LT upward — the pace where lactate accumulates faster than you can clear it. Each tempo run teaches your body to sustain a higher effort before entering oxygen debt. By peak week, you'll hold race pace at a sustainable metabolic cost.
-      </div>
+      <div class="principle-body">Your <span class="principle-highlight">lactate threshold pace is the single strongest predictor of half marathon performance.</span> Tempo runs at 8:10–8:30/mi push your LT upward. Each session teaches your body to sustain a higher effort before entering oxygen debt. By peak week, you'll hold race pace at a sustainable metabolic cost.</div>
     </div>
-    <div class="principle-card" style="--accent: #fbbf24">
-      <div class="principle-icon">⚡</div>
+    <div class="principle-card" style="--accent: #eab308">
       <div class="principle-title">Strides & Neuromuscular Efficiency</div>
-      <div class="principle-body">
-        20-second controlled accelerations after easy runs <span class="principle-highlight">teach your legs to turn over fast without accumulating fatigue.</span> Strides recruit fast-twitch muscle fibers, improve running economy, and maintain speed without the recovery cost of a full speed workout. Think of them as neuromuscular tuning — keeping the engine responsive while the miles roll in.
-      </div>
+      <div class="principle-body">20-second controlled accelerations after easy runs <span class="principle-highlight">teach your legs to turn over fast without accumulating fatigue.</span> Strides recruit fast-twitch fibers, improve running economy, and maintain speed without the recovery cost of a full speed workout. Neuromuscular tuning — keeping the engine responsive while the miles roll in.</div>
     </div>
-    <div class="principle-card" style="--accent: #34d399">
-      <div class="principle-icon">🌿</div>
+    <div class="principle-card" style="--accent: #10b981">
       <div class="principle-title">Long Runs & Aerobic Adaptation</div>
-      <div class="principle-body">
-        Long runs at easy effort <span class="principle-highlight">build mitochondrial density, improve fat oxidation, and increase plasma volume.</span> The slow pace is the point — it depletes glycogen stores slowly, forcing your body to develop its fat-burning machinery. Running long fast is counterproductive: you increase stress without the aerobic adaptation. Some long runs end with goal-pace miles to rehearse the race-day metabolic shift.
-      </div>
+      <div class="principle-body">Long runs at easy effort <span class="principle-highlight">build mitochondrial density, improve fat oxidation, and increase plasma volume.</span> The slow pace is the point. Some long runs end with goal-pace miles to rehearse the race-day metabolic shift under glycogen depletion — your most specific race preparation.</div>
     </div>
-    <div class="principle-card" style="--accent: #a78bfa">
-      <div class="principle-icon">🌙</div>
+    <div class="principle-card" style="--accent: #7c3aed">
       <div class="principle-title">Taper Science</div>
-      <div class="principle-body">
-        Weeks 7–8 reduce volume 20–30% while <span class="principle-highlight">maintaining intensity.</span> This is where fitness converts to freshness. During taper, muscles refill glycogen, micro-tears repair, mitochondria densify, and neuromuscular patterns consolidate. You'll feel sluggish early in the taper (normal — "taper madness") and then suddenly sharp by race week. Do not add extra miles when you feel good. Every extra mile is a withdrawal from the freshness bank.
-      </div>
+      <div class="principle-body">Weeks 7–8 reduce volume 20–30% while <span class="principle-highlight">maintaining intensity.</span> Muscles refill glycogen, micro-tears repair, mitochondria densify, neuromuscular patterns consolidate. You'll feel sluggish early in the taper then suddenly sharp — that's taper madness, and it means the plan is working. Do not add extra miles.</div>
     </div>
   </div>
 
   <div class="section-title">Run Type Guide</div>
   <div class="run-type-legend">
     <div class="legend-item">
-      <div class="legend-dot" style="background:#34d399"></div>
-      <div>
-        <div class="legend-name">Easy Run</div>
-        <div class="legend-desc">Conversational pace · 9:20–9:50/mi · Zone 2 heart rate · Aerobic base building</div>
-      </div>
+      <div class="legend-dot" style="background:#059669"></div>
+      <div><div class="legend-name">Easy Run</div><div class="legend-desc">Conversational · 9:20–9:50/mi · Zone 2 · Aerobic base building</div></div>
     </div>
     <div class="legend-item">
-      <div class="legend-dot" style="background:#fbbf24"></div>
-      <div>
-        <div class="legend-name">Easy + Strides</div>
-        <div class="legend-desc">Easy miles + 4–6×20 sec accelerations · Neuromuscular activation · No fatigue cost</div>
-      </div>
+      <div class="legend-dot" style="background:#d97706"></div>
+      <div><div class="legend-name">Easy + Strides</div><div class="legend-desc">Easy miles + 4–6×20 sec accelerations · Neuromuscular activation</div></div>
     </div>
     <div class="legend-item">
-      <div class="legend-dot" style="background:#f87171"></div>
-      <div>
-        <div class="legend-name">Tempo Run</div>
-        <div class="legend-desc">Comfortably hard · 8:10–8:30/mi · Lactate threshold training · 7/10 RPE</div>
-      </div>
+      <div class="legend-dot" style="background:#dc2626"></div>
+      <div><div class="legend-name">Tempo Run</div><div class="legend-desc">Comfortably hard · 8:10–8:30/mi · Lactate threshold · 7/10 RPE</div></div>
     </div>
     <div class="legend-item">
-      <div class="legend-dot" style="background:#60a5fa"></div>
-      <div>
-        <div class="legend-name">Long Run</div>
-        <div class="legend-desc">Easy effort throughout · Some finish with goal-pace miles · Endurance foundation</div>
-      </div>
+      <div class="legend-dot" style="background:#2563eb"></div>
+      <div><div class="legend-name">Long Run</div><div class="legend-desc">Easy effort · Some finish with goal-pace miles · Endurance foundation</div></div>
     </div>
     <div class="legend-item">
-      <div class="legend-dot" style="background:#2dd4bf"></div>
-      <div>
-        <div class="legend-name">Easy Recovery</div>
-        <div class="legend-desc">Very gentle · 9:30–10:00/mi · Zone 1 · For circulation and metabolic flush</div>
-      </div>
+      <div class="legend-dot" style="background:#0d9488"></div>
+      <div><div class="legend-name">Easy Recovery</div><div class="legend-desc">Very gentle · 9:30–10:00/mi · Zone 1 · Post-race circulation flush</div></div>
     </div>
     <div class="legend-item">
-      <div class="legend-dot" style="background:#fcd34d"></div>
-      <div>
-        <div class="legend-name">Race</div>
-        <div class="legend-desc">Half Marathon · Target 1:45–1:50 as training benchmark · Start conservative</div>
-      </div>
+      <div class="legend-dot" style="background:#b45309"></div>
+      <div><div class="legend-name">Race</div><div class="legend-desc">Half Marathon · Target 1:45–1:50 · Start conservative, build strong</div></div>
     </div>
   </div>
 
   <div class="section-title">Plan Structure</div>
   <div class="principles-grid">
-    <div class="principle-card" style="--accent: #4b8cf8">
-      <div class="principle-icon">📅</div>
+    <div class="principle-card" style="--accent: #3b82f6">
       <div class="principle-title">Phase 1: Weeks 1–3 — Base Building + Race</div>
-      <div class="principle-body">Establish aerobic infrastructure from your 20 mi/week base. Respect connective tissue adaptation. Week 3 is the April 26 race — treated as a strong training run with a built-in mini-taper. Mileage: <span class="principle-highlight">22 → 24 → 18</span>.</div>
+      <div class="principle-body">Establish aerobic infrastructure. Respect connective tissue adaptation. Week 3 is the April 26 race — treated as a strong training run with mini-taper. Mileage: <span class="principle-highlight">22 → 24 → 18</span>.</div>
     </div>
-    <div class="principle-card" style="--accent: #34d399">
-      <div class="principle-icon">📈</div>
+    <div class="principle-card" style="--accent: #10b981">
       <div class="principle-title">Phase 2: Weeks 4–6 — Development + Peak</div>
-      <div class="principle-body">Post-race recovery week (4) followed by the two highest-volume weeks of the plan. Week 6 peaks at 28 miles with the most demanding long run. This is where fitness is built. Mileage: <span class="principle-highlight">22 → 26 → 28</span>.</div>
+      <div class="principle-body">Post-race recovery followed by the two highest-volume weeks. Week 6 peaks at 28 miles with the most demanding long run. This is where fitness is built. Mileage: <span class="principle-highlight">22 → 26 → 28</span>.</div>
     </div>
-    <div class="principle-card" style="--accent: #a78bfa">
-      <div class="principle-icon">🎯</div>
+    <div class="principle-card" style="--accent: #7c3aed">
       <div class="principle-title">Phase 3: Weeks 7–8 — Taper</div>
-      <div class="principle-body">Volume drops 20–30%. Intensity maintained. Adaptations from weeks 1–6 consolidate into race-ready fitness. By the end of week 8, you should feel bouncy, fast, and irritatingly fresh. Mileage: <span class="principle-highlight">22 → 16</span>.</div>
+      <div class="principle-body">Volume drops 20–30%. Intensity maintained. Adaptations consolidate into race-ready fitness. By end of week 8, legs should feel bouncy, fast, and fresh. Mileage: <span class="principle-highlight">22 → 16</span>.</div>
     </div>
   </div>
 
@@ -538,9 +569,7 @@ header {
 
 <!-- ══════════════ PLAN TAB ══════════════ -->
 <div id="tab-plan" class="tab-content">
-  <div id="week-accordion" class="week-accordion">
-    <!-- Rendered by JS -->
-  </div>
+  <div id="week-accordion" class="week-accordion"></div>
 </div>
 
 <!-- ══════════════ TRACKER TAB ══════════════ -->
@@ -548,31 +577,23 @@ header {
   <div class="tracker-actions">
     <button class="clear-btn" onclick="confirmClear()">Reset All Data</button>
   </div>
-  <div class="tracker-stats-grid" id="tracker-stats">
-    <!-- Rendered by JS -->
-  </div>
+  <div class="tracker-stats-grid" id="tracker-stats"></div>
   <div class="charts-grid">
     <div class="chart-card">
       <div class="chart-title">Weekly Mileage</div>
       <div class="chart-sub">Planned vs. logged miles per week</div>
-      <div class="chart-container">
-        <canvas id="mileage-chart"></canvas>
-      </div>
+      <div class="chart-container"><canvas id="mileage-chart"></canvas></div>
     </div>
     <div class="chart-card">
       <div class="chart-title">Average Pace per Week</div>
       <div class="chart-sub">Logged avg pace vs. 8:00/mi goal pace</div>
-      <div class="chart-container">
-        <canvas id="pace-chart"></canvas>
-      </div>
+      <div class="chart-container"><canvas id="pace-chart"></canvas></div>
     </div>
   </div>
   <div class="chart-card">
     <div class="chart-title">Weekly Summary</div>
     <div class="chart-sub" style="margin-bottom:1rem">All 8 weeks at a glance</div>
-    <table class="tracker-table" id="tracker-table">
-      <!-- Rendered by JS -->
-    </table>
+    <table class="tracker-table" id="tracker-table"></table>
   </div>
 </div>
 
@@ -583,138 +604,114 @@ header {
 const PLAN = {
   weeks: [
     {
-      week: 1,
-      dates: "Apr 7 – Apr 13, 2026",
-      phase: "Phase 1: Base Building",
-      phaseColor: "#4b8cf8",
-      plannedMileage: 22,
-      isRaceWeek: false,
-      science: "Week 1 launches your plan from your existing 20-mile base with a conservative 10% increase to 22 miles. Your elite swim aerobic engine could handle far more — <strong>your connective tissue cannot.</strong> Every easy run this week should feel suspiciously slow. The tempo run begins lactate threshold development, your primary performance lever for half-marathon success. By Friday of this week, 80% of your miles (17.6 mi) will have been run at easy pace — exactly per the 80/20 principle.",
+      week: 1, dates: "Apr 7 – Apr 13, 2026",
+      phase: "Phase 1: Base Building", phaseColor: "#3b82f6",
+      plannedMileage: 22, isRaceWeek: false,
+      science: "Week 1 launches your plan from your existing 20-mile base with a conservative 10% increase to 22 miles. Your elite swim aerobic engine could handle far more — <strong>your connective tissue cannot.</strong> Every easy run this week should feel suspiciously slow. The tempo run begins lactate threshold development, your primary performance lever for half-marathon success. By Friday, 80% of your miles (17.6 mi) will have been run at easy pace — exactly per the 80/20 principle.",
       runs: [
-        { day: "Monday", type: "easy", label: "Easy Run", description: "Purely aerobic, fully conversational effort. You should be able to recite song lyrics without breathlessness. This is harder than it sounds for fit athletes — your swim engine will want to go faster. Resist. The structural stress from running accumulates independent of how it feels cardiovascularly.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
-        { day: "Wednesday", type: "strides", label: "Easy + Strides", description: "4 easy miles followed by 4×20-second controlled accelerations. During strides: build smoothly over 10 seconds, hold 85% effort for 10 seconds, then walk 60–90 seconds between each. Strides wake up fast-twitch fibers and improve running economy without accumulating fatigue. Keep it relaxed and springy.", plannedMiles: 5, targetPace: "9:20/mi easy · strides ~7:30–8:00/mi" },
-        { day: "Thursday", type: "tempo", label: "Tempo Run", description: "1 mi easy warmup → 3 mi tempo at 8:15–8:25/mi → 1 mi easy cooldown. Tempo effort: comfortably hard, can speak in short phrases but not hold a conversation. RPE 7/10. This is your most physiologically important run of the week — it directly raises your lactate threshold and half-marathon pace ceiling.", plannedMiles: 5, targetPace: "8:15–8:25/mi (tempo portion)" },
-        { day: "Saturday", type: "long", label: "Long Run", description: "Genuine easy effort throughout. You'll feel slow — that's correct and intentional. The slow pace is what stimulates fat oxidation and mitochondrial biogenesis. Keep heart rate in Zone 2. Don't speed up at the end. This is a deposit in your aerobic adaptation bank.", plannedMiles: 7, targetPace: "9:30–9:50/mi" }
+        { day: "Monday", type: "easy", description: "Purely aerobic, fully conversational effort. You should be able to recite song lyrics without breathlessness. This is harder than it sounds for fit athletes — your swim engine will want to go faster. Resist. The structural stress from running accumulates independent of how it feels cardiovascularly.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
+        { day: "Wednesday", type: "strides", description: "4 easy miles followed by 4×20-second controlled accelerations. During strides: build smoothly over 10 seconds, hold 85% effort for 10 seconds, walk 60–90 sec between each. Strides wake up fast-twitch fibers and improve running economy without accumulating fatigue. Keep it relaxed and springy.", plannedMiles: 5, targetPace: "9:20/mi easy · strides ~7:30–8:00/mi" },
+        { day: "Thursday", type: "tempo", description: "1 mi easy warmup → 3 mi tempo at 8:15–8:25/mi → 1 mi easy cooldown. Tempo effort: comfortably hard, can speak in short phrases but not hold a conversation. RPE 7/10. This is your most physiologically important run of the week — it directly raises your lactate threshold.", plannedMiles: 5, targetPace: "8:15–8:25/mi (tempo portion)" },
+        { day: "Saturday", type: "long", description: "Genuine easy effort throughout. You'll feel slow — that's correct and intentional. The slow pace is what stimulates fat oxidation and mitochondrial biogenesis. Keep heart rate in Zone 2. Don't speed up at the end. This is a deposit in your aerobic adaptation bank.", plannedMiles: 7, targetPace: "9:30–9:50/mi" }
       ]
     },
     {
-      week: 2,
-      dates: "Apr 14 – Apr 20, 2026",
-      phase: "Phase 1: Base Building",
-      phaseColor: "#4b8cf8",
-      plannedMileage: 24,
-      isRaceWeek: false,
-      science: "Volume increases to 24 miles. The tempo run extends to 4 miles — your most important adaptation lever — and the long run introduces its first <strong>goal-pace mile</strong> at the end. Running 6 easy miles first depletes glycogen stores, forcing the final mile to be powered by your lactate threshold system. This is a powerful race-specific stimulus. Note: 19.2 of this week's 24 miles (80%) are at easy effort.",
+      week: 2, dates: "Apr 14 – Apr 20, 2026",
+      phase: "Phase 1: Base Building", phaseColor: "#3b82f6",
+      plannedMileage: 24, isRaceWeek: false,
+      science: "Volume increases to 24 miles. The tempo run extends to 4 miles and the long run introduces its first <strong>goal-pace mile</strong> at the end. Running 6 easy miles first depletes glycogen stores, forcing the final mile to be powered by your lactate threshold system. This is a powerful race-specific stimulus. Note: 19.2 of this week's 24 miles (80%) are at easy effort.",
       runs: [
-        { day: "Monday", type: "easy", label: "Easy Run", description: "Conversational easy miles. Focus on relaxed mechanics: light footfall, slight forward lean from the ankles, relaxed shoulders. Your aerobic adaptations from week 1 are beginning to consolidate. Keep the effort honest.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
-        { day: "Wednesday", type: "strides", label: "Easy + Strides", description: "5 easy miles + 5×20-second strides. One more stride than last week. Focus on smooth, controlled acceleration and high hips — imagine being pulled by a string from the top of your head. Full walk recovery between each stride. These are not sprints.", plannedMiles: 6, targetPace: "9:20/mi easy · strides ~7:30–8:00/mi" },
-        { day: "Thursday", type: "tempo", label: "Tempo Run", description: "1 mi warmup → 4 mi tempo at 8:15–8:20/mi → 1 mi cooldown. One additional tempo mile from last week. The sustained effort should feel controlled and manageable — if you're gasping or slowing significantly, back off 10 sec/mi. Lactate threshold adaptation requires sustained effort, not heroic suffering.", plannedMiles: 6, targetPace: "8:15–8:20/mi (tempo portion)" },
-        { day: "Saturday", type: "long", label: "Long Run w/ Goal Pace", description: "6 easy miles at 9:30+, then 1 final mile at goal race pace (8:00/mi). The easy miles deplete glycogen, making the goal-pace mile more metabolically demanding — and more training-effective. Notice how your form holds up under fatigue. This is your first taste of race conditions.", plannedMiles: 7, targetPace: "9:30/mi easy · 8:00/mi final mile" }
+        { day: "Monday", type: "easy", description: "Conversational easy miles. Focus on relaxed mechanics: light footfall, slight forward lean from the ankles, relaxed shoulders. Your aerobic adaptations from week 1 are consolidating. Keep the effort honest.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
+        { day: "Wednesday", type: "strides", description: "5 easy miles + 5×20-second strides. One more stride than last week. Focus on smooth, controlled acceleration and high hips — imagine being pulled by a string from the top of your head. Full walk recovery between each stride. These are not sprints.", plannedMiles: 6, targetPace: "9:20/mi easy · strides ~7:30–8:00/mi" },
+        { day: "Thursday", type: "tempo", description: "1 mi warmup → 4 mi tempo at 8:15–8:20/mi → 1 mi cooldown. One additional tempo mile from last week. The sustained effort should feel controlled and manageable — if you're gasping or slowing significantly, back off 10 sec/mi. Lactate threshold adaptation requires sustained effort, not heroic suffering.", plannedMiles: 6, targetPace: "8:15–8:20/mi (tempo portion)" },
+        { day: "Saturday", type: "long", description: "6 easy miles at 9:30+, then 1 final mile at goal race pace (8:00/mi). The easy miles deplete glycogen, making the goal-pace mile more metabolically demanding — and more training-effective. Notice how your form holds up under fatigue. Your first taste of race conditions.", plannedMiles: 7, targetPace: "9:30/mi easy · 8:00/mi final mile" }
       ]
     },
     {
-      week: 3,
-      dates: "Apr 21 – Apr 27, 2026",
-      phase: "Phase 1: Race Week",
-      phaseColor: "#ef4444",
-      plannedMileage: 18,
-      isRaceWeek: true,
-      science: "Race week with a built-in mini-taper. Volume drops to 18 miles — down 25% from last week — while run frequency is maintained to keep neuromuscular patterns sharp. <strong>Treat the race as a strong training run, not a performance test.</strong> Your peak fitness is still 3–4 weeks away. Start conservatively (miles 1–3 at 8:05–8:10/mi), build through the middle, and negative-split the back half if you feel strong. Whatever the result, the fitness bank has been accumulating.",
+      week: 3, dates: "Apr 21 – Apr 27, 2026",
+      phase: "Phase 1: Race Week", phaseColor: "#ef4444",
+      plannedMileage: 18, isRaceWeek: true,
+      science: "Race week with a built-in mini-taper. Volume drops to 18 miles — down 25% — while run frequency is maintained to keep neuromuscular patterns sharp. <strong>Treat the race as a strong training run, not a performance test.</strong> Your peak fitness is still 3–4 weeks away. Start conservatively (miles 1–3 at 8:05–8:10/mi), build through the middle, and negative-split the back half if you feel strong. Whatever the result, the fitness bank has been accumulating.",
       runs: [
-        { day: "Monday", type: "easy", label: "Easy Run", description: "Short easy shakeout. Gentle effort — keep HR in Zone 1. Flush out any lingering fatigue from last week. Don't check pace. Don't think about the race. Just enjoy a quiet, easy run.", plannedMiles: 2, targetPace: "9:20–9:40/mi" },
-        { day: "Wednesday", type: "strides", label: "Easy + Strides", description: "2 easy miles + 4×20-second strides. Keep strides controlled and light. The goal is to feel sharp and springy, not tired. Imagine you're waking up your fast-twitch fibers without depleting them. Exactly what you want going into race weekend.", plannedMiles: 2, targetPace: "9:20/mi easy · light strides" },
-        { day: "Friday", type: "easy", label: "Easy Shakeout", description: "Very short, very easy pre-race shakeout. Loosen up, activate the nervous system, shake out any stiffness. Optional: 2–3 light 15-second strides if your legs feel heavy. Do not tire yourself — you want maximum freshness tomorrow.", plannedMiles: 0.9, targetPace: "9:30–10:00/mi" },
-        { day: "Sunday, Apr 26", type: "race", label: "RACE — Half Marathon", description: "Race day! Execution plan: miles 1–3 at 8:05–8:10/mi (conservative start), miles 4–9 settle into 8:00/mi rhythm, miles 10–13 push if feeling strong. Your aerobic base is exceptional — trust it. Avoid going out too fast; your swim fitness will make the early miles feel easy even when they're not. Target: 1:45–1:50 as a training benchmark.", plannedMiles: 13.1, targetPace: "8:00/mi avg (1:45 goal)" }
+        { day: "Monday", type: "easy", description: "Short easy shakeout. Keep HR in Zone 1. Flush out any lingering fatigue from last week. Don't check pace. Don't think about the race. Just enjoy a quiet, easy run.", plannedMiles: 2, targetPace: "9:20–9:40/mi" },
+        { day: "Wednesday", type: "strides", description: "2 easy miles + 4×20-second strides. Keep strides controlled and light. The goal is to feel sharp and springy, not tired. Imagine you're waking your fast-twitch fibers without depleting them. Exactly what you want going into race weekend.", plannedMiles: 2, targetPace: "9:20/mi easy · light strides" },
+        { day: "Friday", type: "easy", description: "Very short, very easy pre-race shakeout. Loosen up, activate the nervous system, shake out any stiffness. Optional: 2–3 light 15-second strides if your legs feel heavy. Do not tire yourself — you want maximum freshness tomorrow.", plannedMiles: 0.9, targetPace: "9:30–10:00/mi" },
+        { day: "Sunday, Apr 26", type: "race", description: "Race day! Execution plan: miles 1–3 at 8:05–8:10/mi (conservative start), miles 4–9 settle into 8:00/mi rhythm, miles 10–13 push if feeling strong. Your aerobic base is exceptional — trust it. Avoid going out too fast; your swim fitness will make the early miles feel easy even when they're not. Target: 1:45–1:50 as a training benchmark.", plannedMiles: 13.1, targetPace: "8:00/mi avg (1:45 goal)" }
       ]
     },
     {
-      week: 4,
-      dates: "Apr 28 – May 4, 2026",
-      phase: "Phase 2: Development",
-      phaseColor: "#34d399",
-      plannedMileage: 22,
-      isRaceWeek: false,
-      science: "Post-race recovery meets development. Your body absorbed significant stress from the race and is in a <strong>supercompensation window</strong> — if you're patient and run easy, adaptations will consolidate and you'll emerge stronger. Monday is active recovery, not a workout. The long run this week reaches 8 miles — matching your pre-plan longest run — which your connective tissue can now handle with greater resilience than before the plan started.",
+      week: 4, dates: "Apr 28 – May 4, 2026",
+      phase: "Phase 2: Development", phaseColor: "#10b981",
+      plannedMileage: 22, isRaceWeek: false,
+      science: "Post-race recovery meets development. Your body absorbed significant stress from the race and is in a <strong>supercompensation window</strong> — if you're patient and run easy, adaptations consolidate and you'll emerge stronger. Monday is active recovery, not a workout. The long run reaches 8 miles — matching your pre-plan longest run — which your connective tissue can now handle with greater resilience.",
       runs: [
-        { day: "Monday", type: "recovery", label: "Easy Recovery", description: "Very easy flush run. Keep HR in Zone 1 throughout. Your legs will likely feel heavy from the race — that's normal. This run is for circulation, not training stimulus. The goal is to move waste products out and blood in. If you feel genuinely terrible, it's fine to skip or cut short.", plannedMiles: 4, targetPace: "9:30–9:50/mi" },
-        { day: "Wednesday", type: "easy", label: "Easy Run", description: "Standard easy run. Legs should be mostly recovered from the race by now. Keep the effort honest — not too fast. You're reintroducing training stimulus, not racing. Observe how your stride feels; you may notice improved efficiency from the race effort.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
-        { day: "Thursday", type: "strides", label: "Easy + Strides", description: "5 easy miles + 5×20-second strides. Return to quality work post-race. Strides should feel effortless and springy — if they don't, your recovery is incomplete and you can skip them without guilt. Next week has more demanding work; protecting your recovery this week enables better adaptation next week.", plannedMiles: 5, targetPace: "9:20/mi easy · strides" },
-        { day: "Saturday", type: "long", label: "Long Run", description: "8 miles at easy effort throughout. This ties your pre-plan longest run — a real landmark. Every mile here builds fat-burning capacity, mitochondrial density, and load tolerance in your connective tissue. No goal-pace miles this week; this run is purely restorative and aerobic.", plannedMiles: 8, targetPace: "9:30–9:50/mi" }
+        { day: "Monday", type: "recovery", description: "Very easy flush run. Keep HR in Zone 1 throughout. Your legs will likely feel heavy from the race — that's normal. This run is for circulation, not training stimulus. The goal is to move waste products out and blood in. If you feel genuinely terrible, it's fine to cut short.", plannedMiles: 4, targetPace: "9:30–9:50/mi" },
+        { day: "Wednesday", type: "easy", description: "Standard easy run. Legs should be mostly recovered by now. Keep the effort honest — not too fast. You're reintroducing training stimulus, not racing. Observe how your stride feels; you may notice improved efficiency from the race effort.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
+        { day: "Thursday", type: "strides", description: "5 easy miles + 5×20-second strides. Return to quality work post-race. Strides should feel effortless and springy — if they don't, your recovery is incomplete and you can skip them. Next week has more demanding work; protecting recovery this week enables better adaptation next week.", plannedMiles: 5, targetPace: "9:20/mi easy · strides" },
+        { day: "Saturday", type: "long", description: "8 miles at easy effort throughout. This ties your pre-plan longest run — a real landmark. Every mile builds fat-burning capacity, mitochondrial density, and load tolerance in your connective tissue. No goal-pace miles this week; this run is purely restorative and aerobic.", plannedMiles: 8, targetPace: "9:30–9:50/mi" }
       ]
     },
     {
-      week: 5,
-      dates: "May 5 – May 11, 2026",
-      phase: "Phase 2: Development",
-      phaseColor: "#34d399",
-      plannedMileage: 26,
-      isRaceWeek: false,
-      science: "Volume jumps to 26 miles — 30% above your starting base. The long run breaks new ground at 9 miles, with the final 2 miles at goal pace. Running goal pace under glycogen depletion is the most specific race preparation possible: you're training exactly the metabolic and neuromuscular systems that will determine your race pace. <strong>The tempo run drops back to 3 miles</strong> this week to reserve energy for the bigger long run. Cumulative fatigue is building intentionally.",
+      week: 5, dates: "May 5 – May 11, 2026",
+      phase: "Phase 2: Development", phaseColor: "#10b981",
+      plannedMileage: 26, isRaceWeek: false,
+      science: "Volume jumps to 26 miles — 30% above your starting base. The long run breaks new ground at 9 miles, with the final 2 miles at goal pace. Running goal pace under glycogen depletion is the most specific race preparation possible. <strong>The tempo drops back to 3 miles</strong> this week to preserve energy for the bigger long run. Cumulative fatigue is building intentionally.",
       runs: [
-        { day: "Monday", type: "easy", label: "Easy Run", description: "5 easy miles. Standard aerobic base maintenance. Your connective tissue has been adapting steadily — treat it well. Honor the easy effort even when the legs feel good. Especially because they feel good.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
-        { day: "Wednesday", type: "strides", label: "Easy + Strides", description: "6 easy miles + 5×20-second strides. Higher volume with strides this week. Your running economy has improved noticeably from week 1 — each stride should feel crisper and more effortless. This is neurological adaptation in action.", plannedMiles: 6, targetPace: "9:20/mi easy · strides" },
-        { day: "Thursday", type: "tempo", label: "Tempo Run", description: "1.5 mi warmup → 3 mi tempo at 8:10–8:20/mi → 1.5 mi cooldown. Tempo pace tightens slightly as your lactate threshold rises. Notice how this effort feels more controlled than week 1 — that's the adaptation you've been building. RPE should still be ~7/10.", plannedMiles: 6, targetPace: "8:10–8:20/mi (tempo portion)" },
-        { day: "Saturday", type: "long", label: "Long Run w/ Goal Pace", description: "New longest run! 7 easy miles at 9:30+ pace, then 2 miles at goal race pace (8:00–8:10/mi). The race-pace finish under fatigue is the most specific race preparation in your plan. Focus on maintaining form — relaxed shoulders, high hips — when tired. Don't chase splits; run by feel.", plannedMiles: 9, targetPace: "9:30/mi easy · 8:00–8:10/mi final 2 miles" }
+        { day: "Monday", type: "easy", description: "5 easy miles. Standard aerobic base maintenance. Your connective tissue has been adapting steadily — treat it well. Honor the easy effort even when the legs feel good. Especially because they feel good.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
+        { day: "Wednesday", type: "strides", description: "6 easy miles + 5×20-second strides. Higher volume with strides this week. Your running economy has improved noticeably from week 1 — each stride should feel crisper and more effortless. This is neurological adaptation in action.", plannedMiles: 6, targetPace: "9:20/mi easy · strides" },
+        { day: "Thursday", type: "tempo", description: "1.5 mi warmup → 3 mi tempo at 8:10–8:20/mi → 1.5 mi cooldown. Tempo pace tightens slightly as your lactate threshold rises. Notice how this effort feels more controlled than week 1 — that's the adaptation you've been building. RPE should still be ~7/10.", plannedMiles: 6, targetPace: "8:10–8:20/mi (tempo portion)" },
+        { day: "Saturday", type: "long", description: "New longest run! 7 easy miles at 9:30+, then 2 miles at goal race pace (8:00–8:10/mi). The race-pace finish under fatigue is the most specific race preparation in your plan. Focus on maintaining form — relaxed shoulders, high hips — when tired.", plannedMiles: 9, targetPace: "9:30/mi easy · 8:00–8:10/mi final 2 miles" }
       ]
     },
     {
-      week: 6,
-      dates: "May 12 – May 18, 2026",
-      phase: "Phase 2: Peak Week",
-      phaseColor: "#f59e0b",
-      plannedMileage: 28,
-      isRaceWeek: false,
-      science: "Peak training week at 28 miles — 40% above your starting base. This is the highest stress week of the entire plan, intentionally placed here to maximize adaptation stimulus. The tempo run reaches 4 miles at lactate threshold — the most demanding quality session in the plan. The long run features 3 consecutive goal-pace miles under fatigue — a potent race rehearsal. <strong>After this week, volume never exceeds 22 miles again.</strong> Trust the taper weeks to convert this stress into race-day speed.",
+      week: 6, dates: "May 12 – May 18, 2026",
+      phase: "Phase 2: Peak Week", phaseColor: "#f59e0b",
+      plannedMileage: 28, isRaceWeek: false,
+      science: "Peak training week at 28 miles — 40% above your starting base. This is the highest stress week of the entire plan. The tempo run reaches 4 miles at lactate threshold. The long run features 3 consecutive goal-pace miles under fatigue — a potent race rehearsal. <strong>After this week, volume never exceeds 22 miles again.</strong> Trust the taper weeks to convert this stress into race-day speed.",
       runs: [
-        { day: "Monday", type: "easy", label: "Easy Run", description: "6 easy miles. Peak week requires disciplined pacing on easy days. Your legs may feel heavy from cumulative training load — that's expected and correct. Run by perceived effort, not pace. If easy today means 9:40, run 9:40.", plannedMiles: 6, targetPace: "9:20–9:40/mi" },
-        { day: "Wednesday", type: "strides", label: "Easy + Strides", description: "6 easy miles + 6×20-second strides. Maximum stride volume in the plan. Your neuromuscular efficiency has improved significantly from week 1. Note how much more effortless each stride feels at the same speed — that's running economy improving.", plannedMiles: 6, targetPace: "9:20/mi easy · strides" },
-        { day: "Thursday", type: "tempo", label: "Tempo Run", description: "1.5 mi warmup → 4 mi tempo at 8:10–8:20/mi → 1.5 mi cooldown. Peak tempo volume. This is the physiological centerpiece of your peak week. Execute conservatively — if you're fading in mile 4, you started too fast. Better to run 8:20s consistently than 8:05s then 8:40s.", plannedMiles: 7, targetPace: "8:10–8:20/mi (tempo portion)" },
-        { day: "Saturday", type: "long", label: "Long Run w/ Goal Pace", description: "Your hardest day. 6 easy miles, then 3 miles at goal race pace (8:00–8:10/mi). Three consecutive goal-pace miles under glycogen depletion. Execute conservatively — 8:05 is better than 7:55 if it means holding form and effort through all 3 miles. This run builds the physiological and psychological foundation for race day.", plannedMiles: 9, targetPace: "9:30/mi easy · 8:00–8:10/mi final 3 miles" }
+        { day: "Monday", type: "easy", description: "6 easy miles. Peak week requires disciplined pacing on easy days. Your legs may feel heavy from cumulative training load — that's expected and correct. Run by perceived effort, not pace. If easy today means 9:40, run 9:40.", plannedMiles: 6, targetPace: "9:20–9:40/mi" },
+        { day: "Wednesday", type: "strides", description: "6 easy miles + 6×20-second strides. Maximum stride volume in the plan. Your neuromuscular efficiency has improved significantly from week 1. Note how much more effortless each stride feels at the same speed — that's running economy improving.", plannedMiles: 6, targetPace: "9:20/mi easy · strides" },
+        { day: "Thursday", type: "tempo", description: "1.5 mi warmup → 4 mi tempo at 8:10–8:20/mi → 1.5 mi cooldown. Peak tempo volume. This is the physiological centerpiece of your peak week. Execute conservatively — if you're fading in mile 4, you started too fast. Better to run 8:20s consistently than 8:05s then 8:40s.", plannedMiles: 7, targetPace: "8:10–8:20/mi (tempo portion)" },
+        { day: "Saturday", type: "long", description: "Your hardest day. 6 easy miles, then 3 miles at goal race pace (8:00–8:10/mi). Three consecutive goal-pace miles under glycogen depletion. Execute conservatively — 8:05 is better than 7:55 if it means holding form through all 3 miles. This run builds the physiological and psychological foundation for race day.", plannedMiles: 9, targetPace: "9:30/mi easy · 8:00–8:10/mi final 3 miles" }
       ]
     },
     {
-      week: 7,
-      dates: "May 19 – May 25, 2026",
-      phase: "Phase 3: Taper",
-      phaseColor: "#a78bfa",
-      plannedMileage: 22,
-      isRaceWeek: false,
-      science: "Taper begins. Volume drops 21% from peak (28 → 22 miles) while intensity is fully preserved. This week may feel strange — you'll have energy you don't know what to do with. That is not a sign of detraining; <strong>it is a sign that the plan is working.</strong> Physiologically: glycogen stores are refilling, micro-tears are repairing, mitochondria are densifying, neuromuscular patterns are consolidating. Do not add junk miles. Every extra mile is a withdrawal from the freshness account.",
+      week: 7, dates: "May 19 – May 25, 2026",
+      phase: "Phase 3: Taper", phaseColor: "#7c3aed",
+      plannedMileage: 22, isRaceWeek: false,
+      science: "Taper begins. Volume drops 21% from peak while intensity is fully preserved. This week may feel strange — you'll have energy you don't know what to do with. That is not detraining; <strong>it is the plan working.</strong> Glycogen stores refilling, micro-tears repairing, mitochondria densifying, neuromuscular patterns consolidating. Do not add junk miles. Every extra mile is a withdrawal from the freshness account.",
       runs: [
-        { day: "Monday", type: "easy", label: "Easy Run", description: "5 easy miles. First taper week. Resist every urge to run faster because you feel fresh. The freshness is the adaptation you've earned from 6 weeks of work. Protect it.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
-        { day: "Wednesday", type: "strides", label: "Easy + Strides", description: "5 easy miles + 4×20-second strides. Maintaining neuromuscular sharpness at reduced volume. Strides should feel effortless and fast — enjoy it. This is what 7 weeks of consistent running economy work looks like.", plannedMiles: 5, targetPace: "9:20/mi easy · strides" },
-        { day: "Thursday", type: "tempo", label: "Tempo Run", description: "1 mi warmup → 3 mi tempo at 8:10/mi → 1 mi cooldown. Maintained intensity at reduced volume. The 3 miles should feel more controlled than peak week — you're fresher. This keeps your lactate threshold primed heading into the final week.", plannedMiles: 5, targetPace: "8:10/mi (tempo portion)" },
-        { day: "Saturday", type: "long", label: "Long Run", description: "7 miles easy throughout. No goal-pace miles this week. Store glycogen and confidence. This is a victory lap acknowledging all the work you've accumulated. Feel how efficiently your body runs at easy pace after 7 weeks of consistent training.", plannedMiles: 7, targetPace: "9:30–9:50/mi" }
+        { day: "Monday", type: "easy", description: "5 easy miles. First taper week. Resist every urge to run faster because you feel fresh. The freshness is the adaptation you've earned from 6 weeks of work. Protect it.", plannedMiles: 5, targetPace: "9:20–9:40/mi" },
+        { day: "Wednesday", type: "strides", description: "5 easy miles + 4×20-second strides. Maintaining neuromuscular sharpness at reduced volume. Strides should feel effortless and fast — enjoy it. This is what 7 weeks of consistent running economy work looks like.", plannedMiles: 5, targetPace: "9:20/mi easy · strides" },
+        { day: "Thursday", type: "tempo", description: "1 mi warmup → 3 mi tempo at 8:10/mi → 1 mi cooldown. Maintained intensity at reduced volume. The 3 miles should feel more controlled than peak week — you're fresher. This keeps your lactate threshold primed heading into the final week.", plannedMiles: 5, targetPace: "8:10/mi (tempo portion)" },
+        { day: "Saturday", type: "long", description: "7 miles easy throughout. No goal-pace miles this week. Store glycogen and confidence. This is a victory lap acknowledging all the work you've accumulated. Feel how efficiently your body runs after 7 weeks of consistent training.", plannedMiles: 7, targetPace: "9:30–9:50/mi" }
       ]
     },
     {
-      week: 8,
-      dates: "May 26 – Jun 1, 2026",
-      phase: "Phase 3: Final Taper",
-      phaseColor: "#a78bfa",
-      plannedMileage: 16,
-      isRaceWeek: false,
+      week: 8, dates: "May 26 – Jun 1, 2026",
+      phase: "Phase 3: Final Taper", phaseColor: "#7c3aed",
+      plannedMileage: 16, isRaceWeek: false,
       science: "Final taper week. Volume at its lowest since race week (16 miles), but fitness is at its all-time high. A brief tempo run maintains race-pace feel without adding fatigue. By Saturday, your legs should feel bouncy, light, and irritatingly fresh. <strong>That feeling is your peak fitness expressing itself.</strong> Your elite aerobic base, now paired with 8 weeks of running-specific adaptation, positions you squarely in 1:45 range. Trust the fitness. Start the race conservative. Let the training do the work.",
       runs: [
-        { day: "Monday", type: "easy", label: "Easy Run", description: "4 easy miles. Final week. Running should feel fluid and effortless. Do not manufacture extra fatigue. You are protecting peak fitness now, not building more.", plannedMiles: 4, targetPace: "9:20–9:40/mi" },
-        { day: "Wednesday", type: "strides", label: "Easy + Strides", description: "3 easy miles + 4×20-second strides. Final stride session of the plan. These sharpen neuromuscular patterns one last time before race week. Carry this efficiency into whatever race follows.", plannedMiles: 3, targetPace: "9:20/mi easy · strides" },
-        { day: "Thursday", type: "tempo", label: "Tempo Run", description: "1 mi warmup → 2 mi tempo at 8:00–8:10/mi → 0.5 mi cooldown. Brief, confidence-building. The pace should feel very controlled and smooth — because you are genuinely fit and well-rested. You are NOT racing this. Just reminding your body what goal pace feels like.", plannedMiles: 3.5, targetPace: "8:00–8:10/mi (tempo portion)" },
-        { day: "Saturday", type: "easy", label: "Easy Run", description: "5.5 easy, relaxed miles. Final consolidation run. Feel how your body moves: efficient, controlled, strong. This is what 8 weeks of disciplined training looks like. Everything is in place. Now rest, eat well, sleep well, and race.", plannedMiles: 5.5, targetPace: "9:20–9:40/mi" }
+        { day: "Monday", type: "easy", description: "4 easy miles. Final week. Running should feel fluid and effortless. Do not manufacture extra fatigue. You are protecting peak fitness now, not building more.", plannedMiles: 4, targetPace: "9:20–9:40/mi" },
+        { day: "Wednesday", type: "strides", description: "3 easy miles + 4×20-second strides. Final stride session of the plan. These sharpen neuromuscular patterns one last time. Carry this efficiency and confidence forward.", plannedMiles: 3, targetPace: "9:20/mi easy · strides" },
+        { day: "Thursday", type: "tempo", description: "1 mi warmup → 2 mi tempo at 8:00–8:10/mi → 0.5 mi cooldown. Brief, confidence-building. The pace should feel very controlled and smooth — because you are genuinely fit and well-rested. You are NOT racing this. Just reminding your body what goal pace feels like.", plannedMiles: 3.5, targetPace: "8:00–8:10/mi (tempo portion)" },
+        { day: "Saturday", type: "easy", description: "5.5 easy, relaxed miles. Final consolidation run. Feel how your body moves: efficient, controlled, strong. This is what 8 weeks of disciplined training looks like. Everything is in place. Now rest, eat well, sleep well, and race.", plannedMiles: 5.5, targetPace: "9:20–9:40/mi" }
       ]
     }
   ]
 };
 
 // ═══════════════════════════════════════════════════════
-//  RUN TYPE STYLES
+//  RUN TYPE STYLES (light theme)
 // ═══════════════════════════════════════════════════════
 const RUN_STYLES = {
-  easy:     { color: "#34d399", bg: "#063322", border: "#0a4a2a", label: "Easy Run" },
-  strides:  { color: "#fbbf24", bg: "#3a2404", border: "#5a3a08", label: "Easy + Strides" },
-  tempo:    { color: "#f87171", bg: "#3d0f0f", border: "#5a1a1a", label: "Tempo Run" },
-  long:     { color: "#60a5fa", bg: "#0c1f3f", border: "#1a3a6a", label: "Long Run" },
-  recovery: { color: "#2dd4bf", bg: "#042e2b", border: "#0a4a40", label: "Easy Recovery" },
-  race:     { color: "#fcd34d", bg: "#3d2800", border: "#6a4a00", label: "🏆 RACE" }
+  easy:     { color: "#065f46", bg: "#d1fae5", border: "#6ee7b7", label: "Easy Run" },
+  strides:  { color: "#92400e", bg: "#fef3c7", border: "#fcd34d", label: "Easy + Strides" },
+  tempo:    { color: "#991b1b", bg: "#fee2e2", border: "#fca5a5", label: "Tempo Run" },
+  long:     { color: "#1e40af", bg: "#dbeafe", border: "#93c5fd", label: "Long Run" },
+  recovery: { color: "#134e4a", bg: "#ccfbf1", border: "#5eead4", label: "Easy Recovery" },
+  race:     { color: "#78350f", bg: "#fef3c7", border: "#fcd34d", label: "RACE" }
 };
 
 // ═══════════════════════════════════════════════════════
@@ -725,31 +722,20 @@ let logData = {};
 let openWeeks = new Set();
 
 function loadLog() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) logData = JSON.parse(raw);
-  } catch(e) { logData = {}; }
+  try { const r = localStorage.getItem(STORAGE_KEY); if (r) logData = JSON.parse(r); } catch(e) { logData = {}; }
 }
-
-function saveLog() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(logData));
-}
-
-function getRunKey(wIdx, rIdx) { return `${wIdx}_${rIdx}`; }
-
-function getRunLog(wIdx, rIdx) {
-  return logData[getRunKey(wIdx, rIdx)] || {};
-}
-
-function setRunLog(wIdx, rIdx, field, value) {
-  const key = getRunKey(wIdx, rIdx);
-  if (!logData[key]) logData[key] = {};
-  logData[key][field] = value;
+function saveLog() { localStorage.setItem(STORAGE_KEY, JSON.stringify(logData)); }
+function getRunKey(w, r) { return `${w}_${r}`; }
+function getRunLog(w, r) { return logData[getRunKey(w, r)] || {}; }
+function setRunLog(w, r, field, value) {
+  const k = getRunKey(w, r);
+  if (!logData[k]) logData[k] = {};
+  logData[k][field] = value;
   saveLog();
   updateHeaderStats();
   updateTrackerStats();
   updateCharts();
-  updateWeekProgress(wIdx);
+  updateWeekProgress(w);
 }
 
 // ═══════════════════════════════════════════════════════
@@ -757,95 +743,47 @@ function setRunLog(wIdx, rIdx, field, value) {
 // ═══════════════════════════════════════════════════════
 function parsePace(str) {
   if (!str) return 0;
-  const clean = str.trim();
-  const m = clean.match(/^(\d{1,2}):(\d{2})$/);
+  const m = str.trim().match(/^(\d{1,2}):(\d{2})$/);
   if (!m) return 0;
-  const mins = parseInt(m[1]);
-  const secs = parseInt(m[2]);
-  if (secs >= 60) return 0;
-  return mins * 60 + secs;
+  const s = parseInt(m[2]);
+  if (s >= 60) return 0;
+  return parseInt(m[1]) * 60 + s;
 }
-
-function formatPace(totalSecs) {
-  if (!totalSecs || totalSecs <= 0) return '—';
-  const mins = Math.floor(totalSecs / 60);
-  const secs = Math.round(totalSecs % 60);
-  return `${mins}:${String(secs).padStart(2, '0')}`;
+function formatPace(secs) {
+  if (!secs || secs <= 0) return '—';
+  return `${Math.floor(secs/60)}:${String(Math.round(secs%60)).padStart(2,'0')}`;
 }
-
 function getWeekLoggedMiles(wIdx) {
-  const week = PLAN.weeks[wIdx];
-  let total = 0;
-  week.runs.forEach((_, rIdx) => {
-    const log = getRunLog(wIdx, rIdx);
-    total += parseFloat(log.miles) || 0;
-  });
-  return total;
+  return PLAN.weeks[wIdx].runs.reduce((s,_,r) => s + (parseFloat(getRunLog(wIdx,r).miles)||0), 0);
 }
-
 function getWeekAvgPace(wIdx) {
-  const week = PLAN.weeks[wIdx];
-  let totalSecMiles = 0;
-  let totalMiles = 0;
-  week.runs.forEach((_, rIdx) => {
-    const log = getRunLog(wIdx, rIdx);
-    const miles = parseFloat(log.miles) || 0;
-    const secs = parsePace(log.pace);
-    if (miles > 0 && secs > 0) {
-      totalSecMiles += secs * miles;
-      totalMiles += miles;
-    }
+  let tsm = 0, tm = 0;
+  PLAN.weeks[wIdx].runs.forEach((_,r) => {
+    const l = getRunLog(wIdx,r);
+    const mi = parseFloat(l.miles)||0, sc = parsePace(l.pace);
+    if (mi > 0 && sc > 0) { tsm += sc*mi; tm += mi; }
   });
-  if (totalMiles === 0) return null;
-  return totalSecMiles / totalMiles;
+  return tm > 0 ? tsm/tm : null;
 }
-
-function getTotalLoggedMiles() {
-  let total = 0;
-  PLAN.weeks.forEach((_, wIdx) => total += getWeekLoggedMiles(wIdx));
-  return total;
-}
-
-function getTotalDoneRuns() {
-  let count = 0;
-  PLAN.weeks.forEach((week, wIdx) => {
-    week.runs.forEach((_, rIdx) => {
-      const log = getRunLog(wIdx, rIdx);
-      if (log.done) count++;
-    });
-  });
-  return count;
-}
-
-function getTotalPlannedMiles() {
-  return PLAN.weeks.reduce((s, w) => s + w.plannedMileage, 0);
-}
-
+function getTotalLoggedMiles() { return PLAN.weeks.reduce((s,_,i) => s+getWeekLoggedMiles(i), 0); }
+function getTotalDoneRuns() { return PLAN.weeks.reduce((s,w,i) => s+w.runs.filter((_,r)=>getRunLog(i,r).done).length, 0); }
+function getTotalPlannedMiles() { return PLAN.weeks.reduce((s,w) => s+w.plannedMileage, 0); }
 function getCurrentWeekIndex() {
   const today = new Date();
-  const weekStarts = [
-    new Date('2026-04-07'), new Date('2026-04-14'), new Date('2026-04-21'),
-    new Date('2026-04-28'), new Date('2026-05-05'), new Date('2026-05-12'),
-    new Date('2026-05-19'), new Date('2026-05-26')
-  ];
-  for (let i = weekStarts.length - 1; i >= 0; i--) {
-    if (today >= weekStarts[i]) return i;
-  }
+  const starts = ['2026-04-07','2026-04-14','2026-04-21','2026-04-28','2026-05-05','2026-05-12','2026-05-19','2026-05-26'].map(d=>new Date(d));
+  for (let i = starts.length-1; i >= 0; i--) { if (today >= starts[i]) return i; }
   return 0;
 }
 
 // ═══════════════════════════════════════════════════════
-//  TAB SWITCHING
+//  TABS
 // ═══════════════════════════════════════════════════════
 function showTab(name) {
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
   event.currentTarget.classList.add('active');
-  if (name === 'tracker') {
-    updateTrackerStats();
-    updateCharts();
-  }
+  if (name === 'tracker') { updateTrackerStats(); updateCharts(); }
 }
 
 // ═══════════════════════════════════════════════════════
@@ -853,29 +791,23 @@ function showTab(name) {
 // ═══════════════════════════════════════════════════════
 function renderPlan() {
   const container = document.getElementById('week-accordion');
-  const currentWeek = getCurrentWeekIndex();
+  const currentWk = getCurrentWeekIndex();
   container.innerHTML = '';
-
   PLAN.weeks.forEach((week, wIdx) => {
     const isOpen = openWeeks.has(wIdx);
     const loggedMiles = getWeekLoggedMiles(wIdx);
-    const pct = Math.min(100, Math.round((loggedMiles / week.plannedMileage) * 100));
-    const isCurrent = wIdx === currentWeek;
-    const isRace = week.isRaceWeek;
-
-    let weekClass = 'week-item';
-    if (isOpen) weekClass += ' open';
-    if (isCurrent) weekClass += ' current-week';
-    if (isRace) weekClass += ' race-week';
-
+    const pct = Math.min(100, Math.round((loggedMiles/week.plannedMileage)*100));
+    const isCurrent = wIdx === currentWk;
+    let cls = 'week-item';
+    if (isOpen) cls += ' open';
+    if (isCurrent) cls += ' current-week';
+    if (week.isRaceWeek) cls += ' race-week';
     const badges = [];
     if (isCurrent) badges.push('<span class="week-current-badge">Current Week</span>');
-    if (isRace) badges.push('<span class="week-race-badge">Race Week</span>');
-
+    if (week.isRaceWeek) badges.push('<span class="week-race-badge">Race Week</span>');
     const item = document.createElement('div');
-    item.className = weekClass;
+    item.className = cls;
     item.id = `week-${wIdx}`;
-
     item.innerHTML = `
       <div class="week-header" onclick="toggleWeek(${wIdx})">
         <div class="week-num">Week ${week.week}</div>
@@ -886,121 +818,80 @@ function renderPlan() {
         </div>
         <div class="week-mileage-block">
           <div class="week-planned">${week.plannedMileage} mi planned</div>
-          <div class="week-logged">
-            <span class="week-logged-val" id="logged-${wIdx}">${loggedMiles.toFixed(1)}</span> mi logged
-          </div>
-          <div class="week-progress-bar">
-            <div class="week-progress-fill" id="wpf-${wIdx}" style="width:${pct}%"></div>
-          </div>
+          <div class="week-logged"><span id="logged-${wIdx}">${loggedMiles.toFixed(1)}</span> mi logged</div>
+          <div class="week-progress-bar"><div class="week-progress-fill" id="wpf-${wIdx}" style="width:${pct}%"></div></div>
         </div>
         <div class="week-chevron">▼</div>
       </div>
       <div class="week-body">
         <div class="week-body-inner">
-          <div class="runs-grid">
-            ${week.runs.map((run, rIdx) => renderRunCard(week, wIdx, run, rIdx)).join('')}
-          </div>
+          <div class="runs-grid">${week.runs.map((run,rIdx)=>renderRunCard(wIdx,run,rIdx)).join('')}</div>
           <div class="science-box">
-            <div class="science-icon">🔬</div>
             <div class="science-content">
               <div class="science-title">The Science — Week ${week.week}</div>
               <div class="science-text">${week.science}</div>
             </div>
           </div>
         </div>
-      </div>
-    `;
-
+      </div>`;
     container.appendChild(item);
   });
 }
 
-function renderRunCard(week, wIdx, run, rIdx) {
+function renderRunCard(wIdx, run, rIdx) {
   const style = RUN_STYLES[run.type] || RUN_STYLES.easy;
   const log = getRunLog(wIdx, rIdx);
   const isDone = !!log.done;
-  const loggedMiles = log.miles || '';
-  const loggedPace = log.pace || '';
-  const loggedNotes = log.notes || '';
-  const paceValid = loggedPace === '' || parsePace(loggedPace) > 0;
-  const paceClass = loggedPace === '' ? '' : (paceValid ? 'valid' : 'invalid');
-
+  const paceClass = log.pace ? (parsePace(log.pace)>0?'valid':'invalid') : '';
   return `
-    <div class="run-card${isDone ? ' is-done' : ''}" id="run-card-${wIdx}-${rIdx}">
+    <div class="run-card${isDone?' is-done':''}" id="run-card-${wIdx}-${rIdx}">
       <div class="run-card-top">
-        <span class="run-type-badge" style="background:${style.bg};color:${style.color};border:1px solid ${style.border}">${style.label}</span>
+        <span class="run-type-badge" style="background:${style.bg};color:${style.color};border:1.5px solid ${style.border}">${style.label}</span>
         <span class="run-day">${run.day}</span>
       </div>
       <div class="run-desc">${run.description}</div>
       <div class="run-stats">
-        <div class="run-stat-item">
-          <label>Planned Miles</label>
-          <div class="run-stat-val">${run.plannedMiles} mi</div>
-        </div>
-        <div class="run-stat-item">
-          <label>Target Pace</label>
-          <div class="run-stat-val pace-val" style="font-size:0.75rem">${run.targetPace}</div>
-        </div>
+        <div class="run-stat-item"><label>Planned Miles</label><div class="run-stat-val">${run.plannedMiles} mi</div></div>
+        <div class="run-stat-item"><label>Target Pace</label><div class="run-stat-val pace-val">${run.targetPace}</div></div>
       </div>
       <div class="run-log-divider"></div>
       <div class="log-label">Log Your Run</div>
       <div class="log-fields">
         <div class="log-field">
           <label>Actual Miles</label>
-          <input type="number" step="0.1" min="0" max="30"
-            placeholder="${run.plannedMiles}"
-            value="${loggedMiles}"
-            onblur="handleField(${wIdx}, ${rIdx}, 'miles', this.value)"
-            oninput="handleMilesInput(this)"
-          >
+          <input type="number" step="0.1" min="0" max="30" placeholder="${run.plannedMiles}" value="${log.miles||''}"
+            onblur="handleField(${wIdx},${rIdx},'miles',this.value)" oninput="handleMilesInput(this)">
         </div>
         <div class="log-field">
           <label>Avg Pace (MM:SS)</label>
-          <input type="text" maxlength="5"
-            class="${paceClass}"
-            placeholder="9:20"
-            value="${loggedPace}"
-            onblur="handlePaceBlur(${wIdx}, ${rIdx}, this)"
-            oninput="handlePaceInput(this)"
-          >
+          <input type="text" maxlength="5" class="${paceClass}" placeholder="9:20" value="${log.pace||''}"
+            onblur="handlePaceBlur(${wIdx},${rIdx},this)" oninput="handlePaceInput(this)">
         </div>
       </div>
       <div class="log-notes">
-        <input type="text" placeholder="Notes (optional)"
-          value="${loggedNotes}"
-          onblur="handleField(${wIdx}, ${rIdx}, 'notes', this.value)"
-        >
+        <input type="text" placeholder="Notes (optional)" value="${log.notes||''}"
+          onblur="handleField(${wIdx},${rIdx},'notes',this.value)">
       </div>
       <div class="done-row">
-        <input type="checkbox" class="done-toggle" id="done-${wIdx}-${rIdx}"
-          ${isDone ? 'checked' : ''}
-          onchange="handleDone(${wIdx}, ${rIdx}, this.checked)"
-        >
+        <input type="checkbox" class="done-toggle" id="done-${wIdx}-${rIdx}" ${isDone?'checked':''}
+          onchange="handleDone(${wIdx},${rIdx},this.checked)">
         <label class="done-toggle-label" for="done-${wIdx}-${rIdx}">Mark as completed</label>
       </div>
-    </div>
-  `;
+    </div>`;
 }
 
 function toggleWeek(wIdx) {
   const el = document.getElementById(`week-${wIdx}`);
-  if (openWeeks.has(wIdx)) {
-    openWeeks.delete(wIdx);
-    el.classList.remove('open');
-  } else {
-    openWeeks.add(wIdx);
-    el.classList.add('open');
-  }
+  if (openWeeks.has(wIdx)) { openWeeks.delete(wIdx); el.classList.remove('open'); }
+  else { openWeeks.add(wIdx); el.classList.add('open'); }
 }
-
 function updateWeekProgress(wIdx) {
-  const week = PLAN.weeks[wIdx];
-  const loggedMiles = getWeekLoggedMiles(wIdx);
-  const pct = Math.min(100, Math.round((loggedMiles / week.plannedMileage) * 100));
-  const loggedEl = document.getElementById(`logged-${wIdx}`);
-  const fillEl = document.getElementById(`wpf-${wIdx}`);
-  if (loggedEl) loggedEl.textContent = loggedMiles.toFixed(1);
-  if (fillEl) fillEl.style.width = pct + '%';
+  const lm = getWeekLoggedMiles(wIdx);
+  const pct = Math.min(100, Math.round((lm/PLAN.weeks[wIdx].plannedMileage)*100));
+  const le = document.getElementById(`logged-${wIdx}`);
+  const fe = document.getElementById(`wpf-${wIdx}`);
+  if (le) le.textContent = lm.toFixed(1);
+  if (fe) fe.style.width = pct+'%';
 }
 
 // ═══════════════════════════════════════════════════════
@@ -1008,213 +899,109 @@ function updateWeekProgress(wIdx) {
 // ═══════════════════════════════════════════════════════
 function handleField(wIdx, rIdx, field, value) {
   setRunLog(wIdx, rIdx, field, value.trim());
-  if (field === 'miles') {
-    updateRunCardDoneState(wIdx, rIdx);
-  }
+  if (field === 'miles') updateRunCardDoneState(wIdx, rIdx);
 }
-
 function handleMilesInput(input) {
-  const val = parseFloat(input.value);
-  if (val < 0 || isNaN(val)) {
-    input.classList.add('invalid');
-  } else {
-    input.classList.remove('invalid');
-    input.classList.add('valid');
-  }
+  const v = parseFloat(input.value);
+  input.classList.toggle('invalid', isNaN(v)||v<0);
+  input.classList.toggle('valid', !isNaN(v)&&v>=0);
 }
-
 function handlePaceInput(input) {
-  const raw = input.value;
-  if (raw === '') {
-    input.className = '';
-    return;
-  }
-  // Allow partial input while typing
-  if (/^\d{0,2}:?\d{0,2}$/.test(raw)) {
-    const secs = parsePace(raw);
-    if (secs > 0) {
-      input.className = 'valid';
-    } else {
-      input.className = '';
-    }
-  } else {
-    input.className = 'invalid';
-  }
+  if (!input.value) { input.className=''; return; }
+  input.className = parsePace(input.value) > 0 ? 'valid' : '';
 }
-
 function handlePaceBlur(wIdx, rIdx, input) {
   const raw = input.value.trim();
-  if (raw === '') {
-    input.className = '';
-    setRunLog(wIdx, rIdx, 'pace', '');
-    return;
-  }
-  const secs = parsePace(raw);
-  if (secs > 0) {
-    input.className = 'valid';
-    setRunLog(wIdx, rIdx, 'pace', raw);
-  } else {
-    input.className = 'invalid';
-    // Don't save invalid pace
-  }
+  if (!raw) { input.className=''; setRunLog(wIdx,rIdx,'pace',''); return; }
+  const s = parsePace(raw);
+  if (s > 0) { input.className='valid'; setRunLog(wIdx,rIdx,'pace',raw); }
+  else { input.className='invalid'; }
 }
-
 function handleDone(wIdx, rIdx, checked) {
   setRunLog(wIdx, rIdx, 'done', checked);
   updateRunCardDoneState(wIdx, rIdx);
 }
-
 function updateRunCardDoneState(wIdx, rIdx) {
-  const log = getRunLog(wIdx, rIdx);
   const card = document.getElementById(`run-card-${wIdx}-${rIdx}`);
   if (!card) return;
-  if (log.done) {
-    card.classList.add('is-done');
-  } else {
-    card.classList.remove('is-done');
-  }
+  card.classList.toggle('is-done', !!getRunLog(wIdx,rIdx).done);
 }
 
 // ═══════════════════════════════════════════════════════
 //  HEADER STATS
 // ═══════════════════════════════════════════════════════
 function updateHeaderStats() {
-  const totalLogged = getTotalLoggedMiles();
-  const totalPlanned = getTotalPlannedMiles();
-  const pct = totalPlanned > 0 ? Math.round((totalLogged / totalPlanned) * 100) : 0;
-  const doneRuns = getTotalDoneRuns();
-
+  const tl = getTotalLoggedMiles(), tp = getTotalPlannedMiles();
   const pctEl = document.getElementById('hdr-pct');
-  const milesEl = document.getElementById('hdr-miles');
-  const runsEl = document.getElementById('hdr-runs');
-
-  if (pctEl) pctEl.textContent = pct + '%';
-  if (milesEl) milesEl.textContent = totalLogged.toFixed(1);
-  if (runsEl) runsEl.textContent = doneRuns;
+  const miEl = document.getElementById('hdr-miles');
+  const runEl = document.getElementById('hdr-runs');
+  if (pctEl) pctEl.textContent = (tp>0?Math.round((tl/tp)*100):0)+'%';
+  if (miEl) miEl.textContent = tl.toFixed(1);
+  if (runEl) runEl.textContent = getTotalDoneRuns();
 }
 
 // ═══════════════════════════════════════════════════════
-//  TRACKER STATS
+//  TRACKER STATS & TABLE
 // ═══════════════════════════════════════════════════════
 function updateTrackerStats() {
   const statsEl = document.getElementById('tracker-stats');
   if (!statsEl) return;
-
-  const totalLogged = getTotalLoggedMiles();
-  const totalPlanned = getTotalPlannedMiles();
-  const totalDone = getTotalDoneRuns();
-  const totalRuns = PLAN.weeks.reduce((s, w) => s + w.runs.length, 0);
-  const completePct = totalPlanned > 0 ? Math.round((totalLogged / totalPlanned) * 100) : 0;
-  const currentWk = getCurrentWeekIndex();
-  const weeksLeft = Math.max(0, PLAN.weeks.length - currentWk - 1);
-
-  // Best average pace across logged weeks
-  let bestPace = null;
-  PLAN.weeks.forEach((_, wIdx) => {
-    const avg = getWeekAvgPace(wIdx);
-    if (avg !== null && (bestPace === null || avg < bestPace)) bestPace = avg;
-  });
-
+  const tl = getTotalLoggedMiles(), tp = getTotalPlannedMiles();
+  const td = getTotalDoneRuns(), tr2 = PLAN.weeks.reduce((s,w)=>s+w.runs.length,0);
+  const wl = Math.max(0, PLAN.weeks.length - getCurrentWeekIndex() - 1);
+  let best = null;
+  PLAN.weeks.forEach((_,i)=>{ const a=getWeekAvgPace(i); if(a&&(!best||a<best)) best=a; });
   statsEl.innerHTML = `
     <div class="tracker-stat-card">
-      <div class="tracker-stat-val" style="color:#4b8cf8">${totalLogged.toFixed(1)}</div>
+      <div class="tracker-stat-val" style="color:#2563eb">${tl.toFixed(1)}</div>
       <div class="tracker-stat-label">Miles Logged</div>
-      <div class="tracker-stat-sub">of ${totalPlanned} planned</div>
+      <div class="tracker-stat-sub">of ${tp} planned</div>
     </div>
     <div class="tracker-stat-card">
-      <div class="tracker-stat-val" style="color:#34d399">${completePct}%</div>
+      <div class="tracker-stat-val" style="color:#059669">${tp>0?Math.round((tl/tp)*100):0}%</div>
       <div class="tracker-stat-label">Plan Complete</div>
-      <div class="tracker-stat-sub">${totalDone} of ${totalRuns} runs done</div>
+      <div class="tracker-stat-sub">${td} of ${tr2} runs done</div>
     </div>
     <div class="tracker-stat-card">
-      <div class="tracker-stat-val" style="color:#fbbf24">${weeksLeft}</div>
+      <div class="tracker-stat-val" style="color:#d97706">${wl}</div>
       <div class="tracker-stat-label">Weeks Remaining</div>
-      <div class="tracker-stat-sub">Currently week ${currentWk + 1}</div>
+      <div class="tracker-stat-sub">Currently week ${getCurrentWeekIndex()+1}</div>
     </div>
     <div class="tracker-stat-card">
-      <div class="tracker-stat-val" style="color:#a78bfa">${bestPace ? formatPace(bestPace) : '—'}</div>
+      <div class="tracker-stat-val" style="color:#7c3aed">${best?formatPace(best):'—'}</div>
       <div class="tracker-stat-label">Best Avg Pace</div>
       <div class="tracker-stat-sub">Goal: 8:00/mi</div>
-    </div>
-  `;
-
-  // Update table
+    </div>`;
   updateTrackerTable();
 }
 
 function updateTrackerTable() {
   const tableEl = document.getElementById('tracker-table');
   if (!tableEl) return;
-
-  const phaseColors = { "Phase 1": "#4b8cf8", "Phase 2": "#34d399", "Phase 3": "#a78bfa" };
-
-  let html = `
-    <thead>
-      <tr>
-        <th>Week</th>
-        <th>Phase</th>
-        <th>Planned</th>
-        <th>Logged</th>
-        <th>Progress</th>
-        <th>Avg Pace</th>
-        <th>vs Goal</th>
-      </tr>
-    </thead>
-    <tbody>
-  `;
-
-  PLAN.weeks.forEach((week, wIdx) => {
-    const loggedMiles = getWeekLoggedMiles(wIdx);
-    const avgPace = getWeekAvgPace(wIdx);
-    const pct = Math.min(100, Math.round((loggedMiles / week.plannedMileage) * 100));
-    const phaseKey = week.phase.startsWith('Phase 1') ? 'Phase 1' : week.phase.startsWith('Phase 2') ? 'Phase 2' : 'Phase 3';
-    const phaseColor = phaseColors[phaseKey] || '#4b8cf8';
-    const phaseName = week.phase.replace('Phase 1: ', '').replace('Phase 2: ', '').replace('Phase 3: ', '');
-    const goalPaceSecs = 480; // 8:00/mi
-    let vsPaceStr = '—';
-    let vpColor = 'var(--text-muted)';
-    if (avgPace) {
-      const diff = goalPaceSecs - avgPace;
-      if (diff >= 0) { vsPaceStr = `+${formatPace(diff)} faster`; vpColor = 'var(--green)'; }
-      else { vsPaceStr = `${formatPace(Math.abs(diff))} slower`; vpColor = 'var(--text-muted)'; }
-    }
-
-    html += `
-      <tr>
-        <td><strong>Wk ${week.week}</strong><br><span style="color:var(--text-dim);font-size:0.72rem">${week.dates.split('–')[0].trim()}</span></td>
-        <td><span class="phase-pill" style="background:${phaseColor}20;color:${phaseColor};border:1px solid ${phaseColor}40">${phaseName}</span>${week.isRaceWeek ? '<br><span style="color:var(--gold);font-size:0.7rem">🏆 Race</span>' : ''}</td>
-        <td>${week.plannedMileage} mi</td>
-        <td style="color:${loggedMiles > 0 ? 'var(--text)' : 'var(--text-dim)'}">${loggedMiles > 0 ? loggedMiles.toFixed(1) + ' mi' : '—'}</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:4px">
-            <div class="tbl-bar-wrap"><div class="tbl-bar-fill" style="width:${pct}%"></div></div>
-            <span class="tbl-pct">${loggedMiles > 0 ? pct + '%' : '—'}</span>
-          </div>
-        </td>
-        <td style="font-variant-numeric:tabular-nums">${avgPace ? formatPace(avgPace) + '/mi' : '—'}</td>
-        <td style="color:${vpColor};font-size:0.78rem">${vsPaceStr}</td>
-      </tr>
-    `;
+  const pc = { "Phase 1":"#3b82f6", "Phase 2":"#10b981", "Phase 3":"#7c3aed" };
+  let html = `<thead><tr><th>Week</th><th>Phase</th><th>Planned</th><th>Logged</th><th>Progress</th><th>Avg Pace</th><th>vs Goal</th></tr></thead><tbody>`;
+  PLAN.weeks.forEach((week,wIdx) => {
+    const lm = getWeekLoggedMiles(wIdx), ap = getWeekAvgPace(wIdx);
+    const pct = Math.min(100,Math.round((lm/week.plannedMileage)*100));
+    const pk = week.phase.startsWith('Phase 1')?'Phase 1':week.phase.startsWith('Phase 2')?'Phase 2':'Phase 3';
+    const pcol = pc[pk]||'#3b82f6';
+    const pn = week.phase.replace(/Phase \d: /,'');
+    const diff = ap ? 480-ap : null;
+    const vpStr = diff!==null ? (diff>=0?`+${formatPace(diff)} faster`:`${formatPace(Math.abs(diff))} slower`) : '—';
+    const vpCol = diff!==null ? (diff>=0?'var(--green)':'var(--text-muted)') : 'var(--text-muted)';
+    html += `<tr>
+      <td><strong>Wk ${week.week}</strong><br><span style="color:var(--text-dim);font-size:.72rem">${week.dates.split('–')[0].trim()}</span></td>
+      <td><span class="phase-pill" style="background:${pcol}18;color:${pcol};border:1px solid ${pcol}40">${pn}</span>${week.isRaceWeek?'<br><span style="color:var(--gold);font-size:.7rem">Race</span>':''}</td>
+      <td>${week.plannedMileage} mi</td>
+      <td style="color:${lm>0?'var(--text)':'var(--text-dim)'}">${lm>0?lm.toFixed(1)+' mi':'—'}</td>
+      <td><div style="display:flex;align-items:center;gap:4px"><div class="tbl-bar-wrap"><div class="tbl-bar-fill" style="width:${pct}%"></div></div><span class="tbl-pct">${lm>0?pct+'%':'—'}</span></div></td>
+      <td>${ap?formatPace(ap)+'/mi':'—'}</td>
+      <td style="color:${vpCol};font-size:.78rem">${vpStr}</td>
+    </tr>`;
   });
-
-  // Totals row
-  const totalLogged = getTotalLoggedMiles();
-  const totalPlanned = getTotalPlannedMiles();
-  const totalPct = Math.round((totalLogged / totalPlanned) * 100);
-  html += `
-    <tr style="border-top:2px solid var(--border-light)">
-      <td colspan="2"><strong>Total</strong></td>
-      <td><strong>${totalPlanned} mi</strong></td>
-      <td><strong>${totalLogged > 0 ? totalLogged.toFixed(1) + ' mi' : '—'}</strong></td>
-      <td>
-        <div style="display:flex;align-items:center;gap:4px">
-          <div class="tbl-bar-wrap"><div class="tbl-bar-fill" style="width:${totalPct}%"></div></div>
-          <span class="tbl-pct">${totalLogged > 0 ? totalPct + '%' : '—'}</span>
-        </div>
-      </td>
-      <td colspan="2"></td>
-    </tr>
-  `;
+  const tl = getTotalLoggedMiles(), tp = getTotalPlannedMiles();
+  const tpct = Math.round((tl/tp)*100);
+  html += `<tr style="border-top:2px solid var(--border)"><td colspan="2"><strong>Total</strong></td><td><strong>${tp} mi</strong></td><td><strong>${tl>0?tl.toFixed(1)+' mi':'—'}</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div class="tbl-bar-wrap"><div class="tbl-bar-fill" style="width:${tpct}%"></div></div><span class="tbl-pct">${tl>0?tpct+'%':'—'}</span></div></td><td colspan="2"></td></tr>`;
   html += '</tbody>';
   tableEl.innerHTML = html;
 }
@@ -1222,150 +1009,53 @@ function updateTrackerTable() {
 // ═══════════════════════════════════════════════════════
 //  CHARTS
 // ═══════════════════════════════════════════════════════
-let mileageChart = null;
-let paceChart = null;
+let mileageChart = null, paceChart = null;
 
-const CHART_DEFAULTS = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: { legend: { labels: { color: '#7890b2', font: { size: 11 } } }, tooltip: { backgroundColor: '#1a2236', borderColor: '#2d4070', borderWidth: 1, titleColor: '#dde4f0', bodyColor: '#7890b2' } },
-  scales: {}
-};
-
-function makeAxisDefaults() {
-  return {
-    grid: { color: '#1e3054' },
-    ticks: { color: '#7890b2', font: { size: 11 } }
-  };
-}
+const axisStyle = { grid: { color: '#cfe0f7' }, ticks: { color: '#5a7a9c', font: { size: 11, family: "'Nunito', sans-serif", weight: '600' } } };
+const tooltipStyle = { backgroundColor: '#fff', borderColor: '#93c5fd', borderWidth: 1.5, titleColor: '#1a3050', bodyColor: '#5a7a9c', padding: 10, cornerRadius: 8, bodyFont: { family: "'Nunito', sans-serif" }, titleFont: { family: "'Nunito', sans-serif", weight: '700' } };
 
 function initCharts() {
-  const mileageCtx = document.getElementById('mileage-chart');
-  const paceCtx = document.getElementById('pace-chart');
-  if (!mileageCtx || !paceCtx) return;
-
-  const labels = PLAN.weeks.map((w, i) => `Wk ${i + 1}`);
-  const planned = PLAN.weeks.map(w => w.plannedMileage);
-  const logged = PLAN.weeks.map((_, wIdx) => {
-    const m = getWeekLoggedMiles(wIdx);
-    return m > 0 ? m : null;
-  });
-
-  mileageChart = new Chart(mileageCtx, {
+  const mc = document.getElementById('mileage-chart');
+  const pc = document.getElementById('pace-chart');
+  if (!mc || !pc) return;
+  const labels = PLAN.weeks.map((_,i)=>`Wk ${i+1}`);
+  mileageChart = new Chart(mc, {
     type: 'bar',
     data: {
       labels,
       datasets: [
-        {
-          label: 'Planned',
-          data: planned,
-          backgroundColor: 'rgba(75, 140, 248, 0.18)',
-          borderColor: 'rgba(75, 140, 248, 0.5)',
-          borderWidth: 1.5,
-          borderRadius: 5
-        },
-        {
-          label: 'Logged',
-          data: logged,
-          backgroundColor: 'rgba(52, 211, 153, 0.4)',
-          borderColor: 'rgba(52, 211, 153, 0.8)',
-          borderWidth: 2,
-          borderRadius: 5
-        }
+        { label: 'Planned', data: PLAN.weeks.map(w=>w.plannedMileage), backgroundColor: 'rgba(59,130,246,0.15)', borderColor: 'rgba(59,130,246,0.5)', borderWidth: 1.5, borderRadius: 6 },
+        { label: 'Logged', data: PLAN.weeks.map((_,i)=>{ const m=getWeekLoggedMiles(i); return m>0?parseFloat(m.toFixed(1)):null; }), backgroundColor: 'rgba(16,185,129,0.35)', borderColor: 'rgba(16,185,129,0.8)', borderWidth: 2, borderRadius: 6 }
       ]
     },
     options: {
-      ...CHART_DEFAULTS,
-      plugins: {
-        ...CHART_DEFAULTS.plugins,
-        tooltip: {
-          ...CHART_DEFAULTS.plugins.tooltip,
-          callbacks: {
-            label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y != null ? ctx.parsed.y.toFixed(1) + ' mi' : 'none'}`
-          }
-        }
-      },
-      scales: {
-        x: makeAxisDefaults(),
-        y: { ...makeAxisDefaults(), beginAtZero: true, max: 32, ticks: { ...makeAxisDefaults().ticks, callback: v => v + ' mi' } }
-      }
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#5a7a9c', font: { size: 11, family: "'Nunito', sans-serif", weight: '600' } } }, tooltip: { ...tooltipStyle, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y!=null?ctx.parsed.y.toFixed(1)+' mi':'none'}` } } },
+      scales: { x: axisStyle, y: { ...axisStyle, beginAtZero: true, max: 32, ticks: { ...axisStyle.ticks, callback: v=>v+' mi' } } }
     }
   });
-
-  // Pace chart
-  const paceData = PLAN.weeks.map((_, wIdx) => {
-    const avg = getWeekAvgPace(wIdx);
-    return avg || null;
-  });
-  const goalLine = Array(8).fill(480); // 8:00/mi = 480 sec
-
-  paceChart = new Chart(paceCtx, {
+  paceChart = new Chart(pc, {
     type: 'line',
     data: {
       labels,
       datasets: [
-        {
-          label: 'Avg Pace',
-          data: paceData,
-          borderColor: '#a78bfa',
-          backgroundColor: 'rgba(167, 139, 250, 0.15)',
-          borderWidth: 2.5,
-          pointBackgroundColor: '#a78bfa',
-          pointRadius: 5,
-          pointHoverRadius: 7,
-          tension: 0.3,
-          spanGaps: true
-        },
-        {
-          label: 'Goal Pace (8:00)',
-          data: goalLine,
-          borderColor: 'rgba(252, 211, 77, 0.6)',
-          borderWidth: 1.5,
-          borderDash: [5, 4],
-          pointRadius: 0,
-          fill: false
-        }
+        { label: 'Avg Pace', data: PLAN.weeks.map((_,i)=>getWeekAvgPace(i)||null), borderColor: '#7c3aed', backgroundColor: 'rgba(124,58,237,0.1)', borderWidth: 2.5, pointBackgroundColor: '#7c3aed', pointRadius: 5, pointHoverRadius: 7, tension: 0.35, spanGaps: true },
+        { label: 'Goal Pace (8:00)', data: Array(8).fill(480), borderColor: 'rgba(245,158,11,0.7)', borderWidth: 1.5, borderDash: [5,4], pointRadius: 0, fill: false }
       ]
     },
     options: {
-      ...CHART_DEFAULTS,
-      plugins: {
-        ...CHART_DEFAULTS.plugins,
-        tooltip: {
-          ...CHART_DEFAULTS.plugins.tooltip,
-          callbacks: {
-            label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y ? formatPace(ctx.parsed.y) + '/mi' : '—'}`
-          }
-        }
-      },
-      scales: {
-        x: makeAxisDefaults(),
-        y: {
-          ...makeAxisDefaults(),
-          reverse: true,
-          min: 420,
-          max: 600,
-          ticks: {
-            ...makeAxisDefaults().ticks,
-            callback: v => formatPace(v) + '/mi',
-            stepSize: 30
-          }
-        }
-      }
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#5a7a9c', font: { size: 11, family: "'Nunito', sans-serif", weight: '600' } } }, tooltip: { ...tooltipStyle, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y?formatPace(ctx.parsed.y)+'/mi':'—'}` } } },
+      scales: { x: axisStyle, y: { ...axisStyle, reverse: true, min: 420, max: 600, ticks: { ...axisStyle.ticks, callback: v=>formatPace(v)+'/mi', stepSize: 30 } } }
     }
   });
 }
 
 function updateCharts() {
   if (!mileageChart || !paceChart) return;
-
-  mileageChart.data.datasets[1].data = PLAN.weeks.map((_, wIdx) => {
-    const m = getWeekLoggedMiles(wIdx);
-    return m > 0 ? parseFloat(m.toFixed(1)) : null;
-  });
+  mileageChart.data.datasets[1].data = PLAN.weeks.map((_,i)=>{ const m=getWeekLoggedMiles(i); return m>0?parseFloat(m.toFixed(1)):null; });
   mileageChart.update('none');
-
-  paceChart.data.datasets[0].data = PLAN.weeks.map((_, wIdx) => getWeekAvgPace(wIdx) || null);
+  paceChart.data.datasets[0].data = PLAN.weeks.map((_,i)=>getWeekAvgPace(i)||null);
   paceChart.update('none');
 }
 
@@ -1388,11 +1078,7 @@ function confirmClear() {
 // ═══════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
   loadLog();
-
-  // Open current week by default
-  const currentWk = getCurrentWeekIndex();
-  openWeeks.add(currentWk);
-
+  openWeeks.add(getCurrentWeekIndex());
   renderPlan();
   updateHeaderStats();
   updateTrackerStats();
