@@ -604,7 +604,7 @@ header {
 const PLAN = {
   weeks: [
     {
-      week: 1, dates: "Apr 7 – Apr 13, 2026",
+      week: 1, dates: "Apr 6 – Apr 12, 2026",
       phase: "Phase 1: Base Building", phaseColor: "#3b82f6",
       plannedMileage: 22, isRaceWeek: false,
       science: "Week 1 launches your plan from your existing 20-mile base with a conservative 10% increase to 22 miles. Your elite swim aerobic engine could handle far more — <strong>your connective tissue cannot.</strong> Every easy run this week should feel suspiciously slow. The tempo run begins lactate threshold development, your primary performance lever for half-marathon success. By Friday, 80% of your miles (17.6 mi) will have been run at easy pace — exactly per the 80/20 principle.",
@@ -616,7 +616,7 @@ const PLAN = {
       ]
     },
     {
-      week: 2, dates: "Apr 14 – Apr 20, 2026",
+      week: 2, dates: "Apr 13 – Apr 19, 2026",
       phase: "Phase 1: Base Building", phaseColor: "#3b82f6",
       plannedMileage: 24, isRaceWeek: false,
       science: "Volume increases to 24 miles. The tempo run extends to 4 miles and the long run introduces its first <strong>goal-pace mile</strong> at the end. Running 6 easy miles first depletes glycogen stores, forcing the final mile to be powered by your lactate threshold system. This is a powerful race-specific stimulus. Note: 19.2 of this week's 24 miles (80%) are at easy effort.",
@@ -628,7 +628,7 @@ const PLAN = {
       ]
     },
     {
-      week: 3, dates: "Apr 21 – Apr 27, 2026",
+      week: 3, dates: "Apr 20 – Apr 26, 2026",
       phase: "Phase 1: Race Week", phaseColor: "#ef4444",
       plannedMileage: 18, isRaceWeek: true,
       science: "Race week with a built-in mini-taper. Volume drops to 18 miles — down 25% — while run frequency is maintained to keep neuromuscular patterns sharp. <strong>Treat the race as a strong training run, not a performance test.</strong> Your peak fitness is still 3–4 weeks away. Start conservatively (miles 1–3 at 8:05–8:10/mi), build through the middle, and negative-split the back half if you feel strong. Whatever the result, the fitness bank has been accumulating.",
@@ -640,7 +640,7 @@ const PLAN = {
       ]
     },
     {
-      week: 4, dates: "Apr 28 – May 4, 2026",
+      week: 4, dates: "Apr 27 – May 3, 2026",
       phase: "Phase 2: Development", phaseColor: "#10b981",
       plannedMileage: 22, isRaceWeek: false,
       science: "Post-race recovery meets development. Your body absorbed significant stress from the race and is in a <strong>supercompensation window</strong> — if you're patient and run easy, adaptations consolidate and you'll emerge stronger. Monday is active recovery, not a workout. The long run reaches 8 miles — matching your pre-plan longest run — which your connective tissue can now handle with greater resilience.",
@@ -652,7 +652,7 @@ const PLAN = {
       ]
     },
     {
-      week: 5, dates: "May 5 – May 11, 2026",
+      week: 5, dates: "May 4 – May 10, 2026",
       phase: "Phase 2: Development", phaseColor: "#10b981",
       plannedMileage: 26, isRaceWeek: false,
       science: "Volume jumps to 26 miles — 30% above your starting base. The long run breaks new ground at 9 miles, with the final 2 miles at goal pace. Running goal pace under glycogen depletion is the most specific race preparation possible. <strong>The tempo drops back to 3 miles</strong> this week to preserve energy for the bigger long run. Cumulative fatigue is building intentionally.",
@@ -664,7 +664,7 @@ const PLAN = {
       ]
     },
     {
-      week: 6, dates: "May 12 – May 18, 2026",
+      week: 6, dates: "May 11 – May 17, 2026",
       phase: "Phase 2: Peak Week", phaseColor: "#f59e0b",
       plannedMileage: 28, isRaceWeek: false,
       science: "Peak training week at 28 miles — 40% above your starting base. This is the highest stress week of the entire plan. The tempo run reaches 4 miles at lactate threshold. The long run features 3 consecutive goal-pace miles under fatigue — a potent race rehearsal. <strong>After this week, volume never exceeds 22 miles again.</strong> Trust the taper weeks to convert this stress into race-day speed.",
@@ -676,7 +676,7 @@ const PLAN = {
       ]
     },
     {
-      week: 7, dates: "May 19 – May 25, 2026",
+      week: 7, dates: "May 18 – May 24, 2026",
       phase: "Phase 3: Taper", phaseColor: "#7c3aed",
       plannedMileage: 22, isRaceWeek: false,
       science: "Taper begins. Volume drops 21% from peak while intensity is fully preserved. This week may feel strange — you'll have energy you don't know what to do with. That is not detraining; <strong>it is the plan working.</strong> Glycogen stores refilling, micro-tears repairing, mitochondria densifying, neuromuscular patterns consolidating. Do not add junk miles. Every extra mile is a withdrawal from the freshness account.",
@@ -688,7 +688,7 @@ const PLAN = {
       ]
     },
     {
-      week: 8, dates: "May 26 – Jun 1, 2026",
+      week: 8, dates: "May 25 – May 31, 2026",
       phase: "Phase 3: Final Taper", phaseColor: "#7c3aed",
       plannedMileage: 16, isRaceWeek: false,
       science: "Final taper week. Volume at its lowest since race week (16 miles), but fitness is at its all-time high. A brief tempo run maintains race-pace feel without adding fatigue. By Saturday, your legs should feel bouncy, light, and irritatingly fresh. <strong>That feeling is your peak fitness expressing itself.</strong> Your elite aerobic base, now paired with 8 weeks of running-specific adaptation, positions you squarely in 1:45 range. Trust the fitness. Start the race conservative. Let the training do the work.",
@@ -770,7 +770,7 @@ function getTotalDoneRuns() { return PLAN.weeks.reduce((s,w,i) => s+w.runs.filte
 function getTotalPlannedMiles() { return PLAN.weeks.reduce((s,w) => s+w.plannedMileage, 0); }
 function getCurrentWeekIndex() {
   const today = new Date();
-  const starts = ['2026-04-07','2026-04-14','2026-04-21','2026-04-28','2026-05-05','2026-05-12','2026-05-19','2026-05-26'].map(d=>new Date(d));
+  const starts = ['2026-04-06','2026-04-13','2026-04-20','2026-04-27','2026-05-04','2026-05-11','2026-05-18','2026-05-25'].map(d=>new Date(d));
   for (let i = starts.length-1; i >= 0; i--) { if (today >= starts[i]) return i; }
   return 0;
 }
